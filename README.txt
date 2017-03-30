@@ -1,0 +1,3 @@
+-	Dùng: Visual Stdio 2013
+-	Tên CDSL trong SQL: TTN_banhangsieuthi 
+- 	Chú thích v? các b?ng có trong CSDL.sql
