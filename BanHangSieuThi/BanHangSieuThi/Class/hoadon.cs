@@ -8,6 +8,6 @@ namespace BanHangSieuThi
 {
     class hoadon
     {
-        public string ma { get; set; }
+        public string ma;
     }
 }

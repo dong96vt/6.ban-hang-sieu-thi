@@ -38,13 +38,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ls_chon = new System.Windows.Forms.ListView();
+            this.clten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clsoluong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clgia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
             this.txttienchu = new System.Windows.Forms.TextBox();
-            this.ls_hanghoa = new System.Windows.Forms.ListView();
             this.label6 = new System.Windows.Forms.Label();
-            this.columma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columgia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvhanghoa = new System.Windows.Forms.DataGridView();
+            this.butmua = new System.Windows.Forms.Button();
+            this.txtsoluong = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvhanghoa)).BeginInit();
             this.SuspendLayout();
             // 
             // butthanhtoan
@@ -55,7 +60,7 @@
             this.butthanhtoan.TabIndex = 0;
             this.butthanhtoan.Text = "Thanh toán";
             this.butthanhtoan.UseVisualStyleBackColor = true;
-            this.butthanhtoan.Click += new System.EventHandler(this.button1_Click);
+            this.butthanhtoan.Click += new System.EventHandler(this.butthanhtoan_Click);
             // 
             // butquaylai
             // 
@@ -65,6 +70,7 @@
             this.butquaylai.TabIndex = 1;
             this.butquaylai.Text = "Quay lại";
             this.butquaylai.UseVisualStyleBackColor = true;
+            this.butquaylai.Click += new System.EventHandler(this.butquaylai_Click);
             // 
             // label1
             // 
@@ -95,8 +101,10 @@
             // 
             this.txttien.Location = new System.Drawing.Point(400, 423);
             this.txttien.Name = "txttien";
+            this.txttien.ReadOnly = true;
             this.txttien.Size = new System.Drawing.Size(275, 20);
             this.txttien.TabIndex = 6;
+            this.txttien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -127,11 +135,35 @@
             // 
             // ls_chon
             // 
+            this.ls_chon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clten,
+            this.clsoluong,
+            this.clgia});
+            this.ls_chon.GridLines = true;
             this.ls_chon.Location = new System.Drawing.Point(339, 80);
             this.ls_chon.Name = "ls_chon";
             this.ls_chon.Size = new System.Drawing.Size(362, 329);
             this.ls_chon.TabIndex = 10;
+            this.ls_chon.Tag = "";
             this.ls_chon.UseCompatibleStateImageBehavior = false;
+            this.ls_chon.View = System.Windows.Forms.View.Details;
+            // 
+            // clten
+            // 
+            this.clten.Text = "Sản Phẩm";
+            this.clten.Width = 139;
+            // 
+            // clsoluong
+            // 
+            this.clsoluong.Text = "SL";
+            this.clsoluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clsoluong.Width = 46;
+            // 
+            // clgia
+            // 
+            this.clgia.Text = "Giá /1 Sản phẩm";
+            this.clgia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clgia.Width = 173;
             // 
             // label5
             // 
@@ -146,21 +178,10 @@
             // 
             this.txttienchu.Location = new System.Drawing.Point(400, 461);
             this.txttienchu.Name = "txttienchu";
+            this.txttienchu.ReadOnly = true;
             this.txttienchu.Size = new System.Drawing.Size(275, 20);
             this.txttienchu.TabIndex = 12;
-            // 
-            // ls_hanghoa
-            // 
-            this.ls_hanghoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columma,
-            this.columten,
-            this.columgia});
-            this.ls_hanghoa.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.ls_hanghoa.Location = new System.Drawing.Point(21, 80);
-            this.ls_hanghoa.Name = "ls_hanghoa";
-            this.ls_hanghoa.Size = new System.Drawing.Size(286, 329);
-            this.ls_hanghoa.TabIndex = 13;
-            this.ls_hanghoa.UseCompatibleStateImageBehavior = false;
+            this.txttienchu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -171,25 +192,63 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Nhập mã / tên hàng hóa :";
             // 
-            // columma
+            // dgvhanghoa
             // 
-            this.columma.Text = "Mã";
+            this.dgvhanghoa.AllowUserToAddRows = false;
+            this.dgvhanghoa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvhanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvhanghoa.Location = new System.Drawing.Point(21, 81);
+            this.dgvhanghoa.Name = "dgvhanghoa";
+            this.dgvhanghoa.ReadOnly = true;
+            this.dgvhanghoa.Size = new System.Drawing.Size(312, 328);
+            this.dgvhanghoa.TabIndex = 15;
             // 
-            // columten
+            // butmua
             // 
-            this.columten.Text = "Tên";
+            this.butmua.Location = new System.Drawing.Point(223, 424);
+            this.butmua.Name = "butmua";
+            this.butmua.Size = new System.Drawing.Size(96, 23);
+            this.butmua.TabIndex = 16;
+            this.butmua.Text = "Mua";
+            this.butmua.UseVisualStyleBackColor = true;
+            this.butmua.Click += new System.EventHandler(this.butmua_Click);
             // 
-            // columgia
+            // txtsoluong
             // 
-            this.columgia.Text = "Giá";
+            this.txtsoluong.Location = new System.Drawing.Point(106, 426);
+            this.txtsoluong.Name = "txtsoluong";
+            this.txtsoluong.Size = new System.Drawing.Size(100, 20);
+            this.txtsoluong.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 429);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Nhập số lượng:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(681, 464);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "VND";
             // 
             // Banhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 531);
+            this.ClientSize = new System.Drawing.Size(730, 531);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtsoluong);
+            this.Controls.Add(this.butmua);
+            this.Controls.Add(this.dgvhanghoa);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.ls_hanghoa);
             this.Controls.Add(this.txttienchu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ls_chon);
@@ -204,6 +263,8 @@
             this.Controls.Add(this.butthanhtoan);
             this.Name = "Banhang";
             this.Text = "Bán hàng";
+            this.Load += new System.EventHandler(this.Banhang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvhanghoa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,10 +284,14 @@
         private System.Windows.Forms.ListView ls_chon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txttienchu;
-        private System.Windows.Forms.ListView ls_hanghoa;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ColumnHeader columma;
-        private System.Windows.Forms.ColumnHeader columten;
-        private System.Windows.Forms.ColumnHeader columgia;
+        private System.Windows.Forms.DataGridView dgvhanghoa;
+        private System.Windows.Forms.Button butmua;
+        private System.Windows.Forms.TextBox txtsoluong;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ColumnHeader clten;
+        private System.Windows.Forms.ColumnHeader clsoluong;
+        private System.Windows.Forms.ColumnHeader clgia;
+        private System.Windows.Forms.Label label8;
     }
 }
