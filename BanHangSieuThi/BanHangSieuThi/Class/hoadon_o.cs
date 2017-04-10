@@ -9,5 +9,11 @@ namespace BanHangSieuThi
     class hoadon_o
     {
         public string ma;
+        public string mahienthi;
+        public string nhanvienma;
+        public string khachhangma;
+        public DateTime ngayviet;
+        public float khuyenmai;
+        public int tonggia;
     }
 }

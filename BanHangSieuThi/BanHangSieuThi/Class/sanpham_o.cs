@@ -8,5 +8,10 @@ namespace BanHangSieuThi
 {
     class sanpham_o
     {
+        public string ma;
+        public string mahienthi;
+        public string hoadonma;
+        public string hanghoama;
+        public int soluong;
     }
 }

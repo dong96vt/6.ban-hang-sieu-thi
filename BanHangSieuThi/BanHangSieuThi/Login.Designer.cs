@@ -33,8 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.but_thoat = new System.Windows.Forms.Button();
             this.but_dangnhap = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_user = new System.Windows.Forms.TextBox();
+            this.txt_pass = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,27 +81,27 @@
             this.but_dangnhap.UseVisualStyleBackColor = true;
             this.but_dangnhap.Click += new System.EventHandler(this.but_dangnhap_Click);
             // 
-            // textBox1
+            // txt_user
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_user.Location = new System.Drawing.Point(146, 56);
+            this.txt_user.Name = "txt_user";
+            this.txt_user.Size = new System.Drawing.Size(193, 20);
+            this.txt_user.TabIndex = 4;
             // 
-            // textBox2
+            // txt_pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
-            this.textBox2.TabIndex = 5;
+            this.txt_pass.Location = new System.Drawing.Point(146, 109);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.Size = new System.Drawing.Size(193, 20);
+            this.txt_pass.TabIndex = 5;
             // 
             // frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 261);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_pass);
+            this.Controls.Add(this.txt_user);
             this.Controls.Add(this.but_dangnhap);
             this.Controls.Add(this.but_thoat);
             this.Controls.Add(this.label2);
@@ -117,8 +117,8 @@
         #endregion
 
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.TextBox txt_user;
         private System.Windows.Forms.Button but_dangnhap;
         private System.Windows.Forms.Button but_thoat;
         private System.Windows.Forms.Label label2;
