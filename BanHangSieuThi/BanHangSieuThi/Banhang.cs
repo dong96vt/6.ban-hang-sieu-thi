@@ -42,7 +42,7 @@ namespace BanHangSieuThi
 
         private void buttimkiem_Click(object sender, EventArgs e)
         {
-
+            Banhang_Load(sender, e);
         }
 
         private void butthanhtoan_Click(object sender, EventArgs e)
@@ -60,7 +60,12 @@ namespace BanHangSieuThi
             {
                 MessageBox.Show("Lỗi kết nối SQL");
             }
-            string selec_hanghoa = "Select * from hanghoa";
+            string selec_hanghoa;
+            if (!String.IsNullOrEmpty(txtkhoa.Text))
+            {
+                selec_hanghoa = "Select * from hanghoa where ma="+txtkhoa.Text+"or ten="+txtkhoa.Text;
+            }
+            else selec_hanghoa = "Select * from hanghoa";
             SqlCommand cm = new SqlCommand(selec_hanghoa, conn);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -144,5 +149,48 @@ namespace BanHangSieuThi
             }
             txttien.Text = tien;
         }
+
+        private void cbboqua_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbboqua.Checked == true)
+            {
+                cb_khachquen.Enabled = false;
+                txthoten.ReadOnly = true;
+                txtsdt.ReadOnly = true;
+                txtdiachi.ReadOnly = true;
+                txtcmtnd.ReadOnly = true;
+            }
+            else
+            {
+                cb_khachquen.Enabled = true;
+                txthoten.ReadOnly = false;
+                txtsdt.ReadOnly = false;
+                txtdiachi.ReadOnly = false;
+                txtcmtnd.ReadOnly = false;
+            }
+        }
+
+        private void cb_khachquen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_khachquen.Checked == true)
+            {
+                cbboqua.Enabled = false;
+                txthoten.ReadOnly = true;
+                txtsdt.ReadOnly = true;
+                txtdiachi.ReadOnly = true;
+                txtcmtnd.ReadOnly = true;
+                cbb_khachquen.Enabled = true;
+            }
+            else
+            {
+                cbboqua.Enabled = true;
+                txthoten.ReadOnly = false;
+                txtsdt.ReadOnly = false;
+                txtdiachi.ReadOnly = false;
+                txtcmtnd.ReadOnly = false;
+                cbb_khachquen.Enabled = false;
+            }
+        }
+
     }
 }

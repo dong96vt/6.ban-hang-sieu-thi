@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BanHangSieuThi
+namespace BanHangSieuThi.Class
 {
-    class sanpham
+    class sanpham_b
     {
     }
 }
