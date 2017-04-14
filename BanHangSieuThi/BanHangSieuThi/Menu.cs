@@ -12,9 +12,10 @@ namespace BanHangSieuThi
 {
     public partial class Menu : Form
     {
-        public Menu()
+        public Menu(string manv)
         {
             InitializeComponent();
+            lb_manv.Text = manv;
         }
 
         private void button5_MouseClick(object sender, MouseEventArgs e)
@@ -43,7 +44,7 @@ namespace BanHangSieuThi
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            Banhang f = new Banhang();
+            Banhang f = new Banhang(lb_manv.Text);
             f.ShowDialog();
         }
 

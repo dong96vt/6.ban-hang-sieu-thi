@@ -35,6 +35,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lb_manv = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -107,11 +109,31 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button7_MouseClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(438, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Mã nhân viên:";
+            // 
+            // lb_manv
+            // 
+            this.lb_manv.AutoSize = true;
+            this.lb_manv.Location = new System.Drawing.Point(519, 162);
+            this.lb_manv.Name = "lb_manv";
+            this.lb_manv.Size = new System.Drawing.Size(16, 13);
+            this.lb_manv.TabIndex = 8;
+            this.lb_manv.Text = "-1";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 193);
+            this.Controls.Add(this.lb_manv);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -122,6 +144,7 @@
             this.Name = "Menu";
             this.Text = "Chương Trình Bán Hàng SiêuThị";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,6 +157,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_manv;
     }
 }
 

@@ -31,13 +31,13 @@ namespace BanHangSieuThi
                     str1 = (!(so == new decimal(0)) ? ReadNumber.Đọc_Số(ReadNumber.Tạo_Mảng_Số(str)) : "không");
                 }
             }
-            catch (Exception exception1)
+            catch 
             {
                 try
                 {
                     str1 = ReadNumber.Đọc_Số(ReadNumber.Tạo_Mảng_Số(str));
                 }
-                catch (Exception exception)
+                catch
                 {
                     str1 = "Tò te tí te ,số máy quí khách vừa gọi không có thật, xin vui lòng gọi lại số khác :D";
                 }
@@ -237,7 +237,7 @@ namespace BanHangSieuThi
             {
                 nghin = Convert.ToInt32(nghin).ToString();
             }
-            catch (Exception exception)
+            catch
             {
             }
             int num = 0;
@@ -351,5 +351,4 @@ namespace BanHangSieuThi
             return str1;
         }
     }
-
 }

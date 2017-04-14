@@ -38,5 +38,5 @@ C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
-C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_login.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache

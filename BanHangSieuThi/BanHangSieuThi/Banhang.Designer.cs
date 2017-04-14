@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ls_chon = new System.Windows.Forms.ListView();
+            this.clma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clsoluong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clgia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,6 +64,10 @@
             this.cb_khachquen = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.lb_manhanvien = new System.Windows.Forms.Label();
+            this.rbt_nam = new System.Windows.Forms.RadioButton();
+            this.rbt_nu = new System.Windows.Forms.RadioButton();
+            this.rbt_khac = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhanghoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,6 +156,7 @@
             // ls_chon
             // 
             this.ls_chon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clma,
             this.clten,
             this.clsoluong,
             this.clgia});
@@ -163,19 +169,28 @@
             this.ls_chon.UseCompatibleStateImageBehavior = false;
             this.ls_chon.View = System.Windows.Forms.View.Details;
             // 
+            // clma
+            // 
+            this.clma.DisplayIndex = 3;
+            this.clma.Text = "Mã";
+            this.clma.Width = 0;
+            // 
             // clten
             // 
+            this.clten.DisplayIndex = 0;
             this.clten.Text = "Sản Phẩm";
             this.clten.Width = 139;
             // 
             // clsoluong
             // 
+            this.clsoluong.DisplayIndex = 1;
             this.clsoluong.Text = "SL";
             this.clsoluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.clsoluong.Width = 46;
             // 
             // clgia
             // 
+            this.clgia.DisplayIndex = 2;
             this.clgia.Text = "Giá /1 Sản phẩm";
             this.clgia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.clgia.Width = 173;
@@ -212,7 +227,7 @@
             this.dgvhanghoa.AllowUserToAddRows = false;
             this.dgvhanghoa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvhanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvhanghoa.Location = new System.Drawing.Point(21, 81);
+            this.dgvhanghoa.Location = new System.Drawing.Point(12, 80);
             this.dgvhanghoa.Name = "dgvhanghoa";
             this.dgvhanghoa.ReadOnly = true;
             this.dgvhanghoa.Size = new System.Drawing.Size(312, 328);
@@ -302,28 +317,28 @@
             // 
             this.txthoten.Location = new System.Drawing.Point(836, 113);
             this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(217, 20);
+            this.txthoten.Size = new System.Drawing.Size(188, 20);
             this.txthoten.TabIndex = 25;
             // 
             // txtsdt
             // 
             this.txtsdt.Location = new System.Drawing.Point(836, 168);
             this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Size = new System.Drawing.Size(217, 20);
+            this.txtsdt.Size = new System.Drawing.Size(188, 20);
             this.txtsdt.TabIndex = 26;
             // 
             // txtdiachi
             // 
             this.txtdiachi.Location = new System.Drawing.Point(836, 231);
             this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(217, 20);
+            this.txtdiachi.Size = new System.Drawing.Size(188, 20);
             this.txtdiachi.TabIndex = 27;
             // 
             // txtcmtnd
             // 
             this.txtcmtnd.Location = new System.Drawing.Point(836, 291);
             this.txtcmtnd.Name = "txtcmtnd";
-            this.txtcmtnd.Size = new System.Drawing.Size(217, 20);
+            this.txtcmtnd.Size = new System.Drawing.Size(188, 20);
             this.txtcmtnd.TabIndex = 28;
             // 
             // cbboqua
@@ -339,17 +354,21 @@
             // 
             // cbb_khachquen
             // 
+            this.cbb_khachquen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_khachquen.Enabled = false;
             this.cbb_khachquen.FormattingEnabled = true;
-            this.cbb_khachquen.Location = new System.Drawing.Point(836, 373);
+            this.cbb_khachquen.Location = new System.Drawing.Point(836, 390);
+            this.cbb_khachquen.MaxDropDownItems = 100;
             this.cbb_khachquen.Name = "cbb_khachquen";
-            this.cbb_khachquen.Size = new System.Drawing.Size(217, 21);
+            this.cbb_khachquen.Size = new System.Drawing.Size(188, 21);
             this.cbb_khachquen.TabIndex = 30;
+            this.cbb_khachquen.Tag = "Chọn khách hàng";
+            this.cbb_khachquen.SelectedIndexChanged += new System.EventHandler(this.cbb_khachquen_SelectedIndexChanged);
             // 
             // cb_khachquen
             // 
             this.cb_khachquen.AutoSize = true;
-            this.cb_khachquen.Location = new System.Drawing.Point(732, 375);
+            this.cb_khachquen.Location = new System.Drawing.Point(732, 392);
             this.cb_khachquen.Name = "cb_khachquen";
             this.cb_khachquen.Size = new System.Drawing.Size(84, 17);
             this.cb_khachquen.TabIndex = 31;
@@ -371,15 +390,61 @@
             this.lb_manhanvien.AutoSize = true;
             this.lb_manhanvien.Location = new System.Drawing.Point(932, 21);
             this.lb_manhanvien.Name = "lb_manhanvien";
-            this.lb_manhanvien.Size = new System.Drawing.Size(23, 13);
+            this.lb_manhanvien.Size = new System.Drawing.Size(16, 13);
             this.lb_manhanvien.TabIndex = 33;
-            this.lb_manhanvien.Text = "null";
+            this.lb_manhanvien.Text = "-1";
+            // 
+            // rbt_nam
+            // 
+            this.rbt_nam.AutoSize = true;
+            this.rbt_nam.Location = new System.Drawing.Point(836, 344);
+            this.rbt_nam.Name = "rbt_nam";
+            this.rbt_nam.Size = new System.Drawing.Size(47, 17);
+            this.rbt_nam.TabIndex = 34;
+            this.rbt_nam.TabStop = true;
+            this.rbt_nam.Text = "Nam";
+            this.rbt_nam.UseVisualStyleBackColor = true;
+            // 
+            // rbt_nu
+            // 
+            this.rbt_nu.AutoSize = true;
+            this.rbt_nu.Location = new System.Drawing.Point(889, 344);
+            this.rbt_nu.Name = "rbt_nu";
+            this.rbt_nu.Size = new System.Drawing.Size(39, 17);
+            this.rbt_nu.TabIndex = 35;
+            this.rbt_nu.TabStop = true;
+            this.rbt_nu.Text = "Nữ";
+            this.rbt_nu.UseVisualStyleBackColor = true;
+            // 
+            // rbt_khac
+            // 
+            this.rbt_khac.AutoSize = true;
+            this.rbt_khac.Location = new System.Drawing.Point(934, 344);
+            this.rbt_khac.Name = "rbt_khac";
+            this.rbt_khac.Size = new System.Drawing.Size(92, 17);
+            this.rbt_khac.TabIndex = 36;
+            this.rbt_khac.TabStop = true;
+            this.rbt_khac.Text = "Giới tính khác";
+            this.rbt_khac.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(755, 346);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Giới tính:";
             // 
             // Banhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 531);
+            this.ClientSize = new System.Drawing.Size(1038, 531);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.rbt_khac);
+            this.Controls.Add(this.rbt_nu);
+            this.Controls.Add(this.rbt_nam);
             this.Controls.Add(this.lb_manhanvien);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.cb_khachquen);
@@ -458,5 +523,10 @@
         private System.Windows.Forms.CheckBox cb_khachquen;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lb_manhanvien;
+        private System.Windows.Forms.ColumnHeader clma;
+        private System.Windows.Forms.RadioButton rbt_nam;
+        private System.Windows.Forms.RadioButton rbt_nu;
+        private System.Windows.Forms.RadioButton rbt_khac;
+        private System.Windows.Forms.Label label15;
     }
 }

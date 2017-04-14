@@ -9,80 +9,177 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Common;
+using BanHangSieuThi.Class;
 
 namespace BanHangSieuThi
 {
     public partial class Banhang : Form
     {
-        SqlConnection conn= Connection.Conn();
-        private string tien;
-        public Banhang()
+        private string tien; // Biến lưu tổng tiền của hóa đơn
+        public Banhang(string manv)
         {
             InitializeComponent();
-            initGrid(dgvhanghoa);
+            initGrid(dgvhanghoa); 
+            lb_manhanvien.Text = manv;
+            cbboqua.Checked = true;
         }
+        // Khởi tạo các cột cho DataGridView dgvhanghoa
         protected void initGrid(DataGridView dgv)
         {
             dgv.AutoGenerateColumns = false;
             DataGridViewColumn cl = new DataGridViewTextBoxColumn();
             cl.DataPropertyName = "mahienthi";
             cl.HeaderText = "MÃ";
+            cl.Width = 90;
             dgv.Columns.Add(cl);
             cl = new DataGridViewTextBoxColumn();
             cl.DataPropertyName = "ten";
             cl.HeaderText = "TÊN SẢN PHẨM";
-            cl.Width = 167;
+            cl.Width = 160;
             dgv.Columns.Add(cl);
         }
-
+        // Load dữ liệu vào combobox cbb_khachquen
+        public void Load_cbb()
+        {
+            int kt = new khachhang_b().Load_DropDowList(cbb_khachquen);
+            if (kt == -1)
+            {
+                MessageBox.Show("Lỗi kết nối SQL !");
+                this.Close();
+            }
+        }
+        // Click button butquaylai
         private void butquaylai_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        // Click button buttimkiem
         private void buttimkiem_Click(object sender, EventArgs e)
         {
             Banhang_Load(sender, e);
         }
-
+        // Click button butthanhtoan
         private void butthanhtoan_Click(object sender, EventArgs e)
         {
+            string ma = DateTime.Now.ToString("yymmddhhss");
+            //lấy dữ liệu từ listview và kiểm tra
+            List<sanpham_o> ls = new List<sanpham_o>();
+            int i = 0;
+            foreach (ListViewItem item in ls_chon.Items)
+            {
+                sanpham_o sp = new sanpham_o();
+                sp.ma = (Convert.ToInt32(ma) + i).ToString();
+                sp.mahienthi = "SP" + sp.ma;
+                sp.soluong = Convert.ToInt32(item.SubItems[2].Text);
+                sp.hoadonma = ma;
+                sp.hanghoama = item.SubItems[0].Text;
+                ls.Add(sp);
+                i++;
+            }
+            if (i == 0)
+            {
+                MessageBox.Show("Chưa chọn sản phẩm !");
+                return;
+            }
+            //INSERT
+            int kt;
+            hoadon_o hd = new hoadon_o();
+            hoadon_b bushd = new hoadon_b();
+            hd.ma = ma;
+            hd.ngayviet = DateTime.Now;
+            hd.nhanvienma = lb_manhanvien.Text;
+            hd.tonggia = Convert.ToInt32(tien);
+            hd.mahienthi = "HD" + ma;
+            
+             //insert khách hàng (Nếu là khách mới) và gán giá trị cho khachhangma
+            if (cbboqua.Checked == true) hd.khachhangma = "KHNULL";
+            else
+            {
+                if (cb_khachquen.Checked == false)
+                {
+                    if (txthoten.Text == null && txtcmtnd.Text == null && txtsdt.Text == null) MessageBox.Show("Chưa điền thông tin khách hàng !");
+                    khachhang_o kh = new khachhang_o();
+                    khachhang_b b = new khachhang_b();
+                    kh.ma = ma;
+                    kh.mahienthi = "KH" + kh.ma;
+                    kh.sdt = txtsdt.Text;
+                    kh.hoten = txthoten.Text;
+                    kh.diachi = txtdiachi.Text;
+                    kh.cmtnd = txtcmtnd.Text;
+                    if (rbt_nam.Checked == true) kh.gioitinh = 1;
+                    if (rbt_nu.Checked == true) kh.gioitinh = 0;
+                    else kh.gioitinh = -1;
+                    kt = b.insert(kh);
+                    if (kt == -1)
+                    {
+                        MessageBox.Show("Lỗi kết nối SQL !");
+                        return;
+                    }
+                    if (kt == -2)
+                    {
+                        MessageBox.Show("Lỗi insert khách hàng !");
+                        return;
+                    }
+                    hd.khachhangma = ma;
+                }
+                else
+                {
+                    if (cbb_khachquen.SelectedValue.ToString().Length > 10) MessageBox.Show("Chưa chọn khách hàng !");
+                    else hd.khachhangma = cbb_khachquen.SelectedValue.ToString();
+                }
+            }
+            
+             //insert hóa đơn
+            kt = bushd.insert(hd);
+            if (kt == -1)
+            {
+                MessageBox.Show("Lỗi kết nối SQL !");
+                return;
+            }
+            if (kt == -2)
+            {
+                MessageBox.Show("Lỗi insert hóa đơn !");
+                return;
+            }
 
+            // insert các sản phẩm 
+            
+            sanpham_b bussp = new sanpham_b();
+            kt = bussp.insert_list(ls);
+            if (kt == -1)
+            {
+                MessageBox.Show("Lỗi kết nối SQL !");
+                return;
+            }
+            if (kt == -2)
+            {
+                MessageBox.Show("Lỗi insert sản phẩm !");
+                return;
+            }
+            if (kt == 1)
+            {
+                MessageBox.Show("Thành công !");
+                return;
+            }
         }
-
+        // Load dữ liệu lên DataGridView dgvhanghoa
         private void Banhang_Load(object sender, EventArgs e)
         {
-            try
+            hanghoa_b b = new hanghoa_b();
+            int kt = b.select(dgvhanghoa, "hanghoa", txtkhoa.Text);
+            if (kt == -1)
             {
-                conn.Open();          
+                MessageBox.Show("Lỗi kết nối SQL !");
+                this.Close();
             }
-            catch
+            if (kt == -2)
             {
-                MessageBox.Show("Lỗi kết nối SQL");
+                MessageBox.Show("Lỗi thực thi !");
+                this.Close();
             }
-            string selec_hanghoa;
-            if (!String.IsNullOrEmpty(txtkhoa.Text))
-            {
-                selec_hanghoa = "Select * from hanghoa where ma="+txtkhoa.Text+"or ten="+txtkhoa.Text;
-            }
-            else selec_hanghoa = "Select * from hanghoa";
-            SqlCommand cm = new SqlCommand(selec_hanghoa, conn);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cm;
-            try
-            {
-                da.Fill(ds, "hanghoa");
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi");
-            }
-            dgvhanghoa.DataSource = ds.Tables["hanghoa"].DefaultView;
-            dgvhanghoa.Refresh();
-            conn.Close();
+            
         }
-
+        // Click button butmua
         private void butmua_Click(object sender, EventArgs e)
         {
             if(dgvhanghoa.SelectedRows.Count <= 0)
@@ -91,15 +188,12 @@ namespace BanHangSieuThi
                 return;
             }
             DataRowView drview = (DataRowView) dgvhanghoa.SelectedRows[0].DataBoundItem;
-            DataRow dr = drview.Row;
-            hanghoa_o hh = new hanghoa_o();
-            hh.ma = dr["ma"].ToString();
-            hh.mahienthi = dr["mahienthi"].ToString();
-            hh.ten = dr["ten"].ToString();
-            hh.gia = dr["gia"].ToString();
+            hanghoa_b b = new hanghoa_b();
+            hanghoa_o hh = b.oject4Row(drview.Row);
             showList(hh);
             txtsoluong.Text = "0";
         }
+        // Hàm hiển thị ListView ls_chon và tiền trong txttien, txttienchu
         private void showList(hanghoa_o hh)
         {   
             if (String.IsNullOrEmpty(txttien.Text)) txttien.Text = "0";
@@ -117,16 +211,27 @@ namespace BanHangSieuThi
                 MessageBox.Show("Nhập sai số lượng, mời nhập lại !");
                 return;
             }
+            foreach (ListViewItem find in ls_chon.Items)
+            {
+                if (hh.ma == find.SubItems[0].Text)
+                {
+                    find.SubItems[2].Text = (Convert.ToInt32(find.SubItems[2].Text) + Convert.ToInt32(txtsoluong.Text)).ToString();
+                    if (Convert.ToInt32(find.SubItems[2].Text) <= 0) ls_chon.Items.Remove(find);
+                    return;
+                }
+            }
             ListViewItem item = new ListViewItem();
-            item.Text = hh.ten;
+            item.Text = hh.ma;
+            item.SubItems.Add(hh.ten);
             item.SubItems.Add(txtsoluong.Text);
             item.SubItems.Add(hh.gia);
             ls_chon.Items.Add(item);
             tien = (Convert.ToInt32(tien) + Convert.ToInt32(txtsoluong.Text) * Convert.ToInt32(hh.gia)).ToString();
             showTien(tien);
             txttienchu.Text = ReadNumber.ByWords(decimal.Parse(txttien.Text));
+            return;
         }
-
+        // Hàm hiển thị tiền vào txttien
         private void showTien(string tien)
         {
             string txt;
@@ -149,7 +254,7 @@ namespace BanHangSieuThi
             }
             txttien.Text = tien;
         }
-
+        // Thay đổi trạng thái check của checkbox cb_boqua
         private void cbboqua_CheckedChanged(object sender, EventArgs e)
         {
             if (cbboqua.Checked == true)
@@ -159,6 +264,9 @@ namespace BanHangSieuThi
                 txtsdt.ReadOnly = true;
                 txtdiachi.ReadOnly = true;
                 txtcmtnd.ReadOnly = true;
+                rbt_khac.Enabled = false;
+                rbt_nam.Enabled = false;
+                rbt_nu.Enabled = false;
             }
             else
             {
@@ -167,30 +275,71 @@ namespace BanHangSieuThi
                 txtsdt.ReadOnly = false;
                 txtdiachi.ReadOnly = false;
                 txtcmtnd.ReadOnly = false;
+                rbt_khac.Enabled = true;
+                rbt_nam.Enabled = true;
+                rbt_nu.Enabled = true;
             }
         }
-
+        // Thay đổi trạng thái check của checkbox cb_khachquen
         private void cb_khachquen_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_khachquen.Checked == true)
             {
+                Load_cbb();
                 cbboqua.Enabled = false;
                 txthoten.ReadOnly = true;
                 txtsdt.ReadOnly = true;
                 txtdiachi.ReadOnly = true;
                 txtcmtnd.ReadOnly = true;
                 cbb_khachquen.Enabled = true;
+                rbt_khac.Enabled = false;
+                rbt_nam.Enabled = false;
+                rbt_nu.Enabled = false;
             }
             else
             {
                 cbboqua.Enabled = true;
                 txthoten.ReadOnly = false;
+                txthoten.Text = null;
                 txtsdt.ReadOnly = false;
+                txtsdt.Text = null;
                 txtdiachi.ReadOnly = false;
+                txtdiachi.Text = null;
                 txtcmtnd.ReadOnly = false;
+                txtcmtnd.Text = null;
                 cbb_khachquen.Enabled = false;
+                rbt_khac.Enabled = true;
+                rbt_nam.Enabled = true;
+                rbt_nu.Enabled = true;
             }
         }
+        // Chọn 1 đối tượng trong ComboBox cbb_khachquen
+        private void cbb_khachquen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            khachhang_b b = new khachhang_b();
+            string id = cbb_khachquen.SelectedValue.ToString();
+            if (id.Length > 10) return;
+            khachhang_o kh = b.oject4ComboBox(id);
 
+            if (cb_khachquen.Checked == true)
+            {
+                txtcmtnd.Text = kh.cmtnd.ToString();
+                txtdiachi.Text = kh.diachi.ToString();
+                txthoten.Text = kh.hoten.ToString();
+                txtsdt.Text = kh.sdt.ToString();
+                switch (kh.gioitinh)
+                {
+                    case 1:
+                        rbt_nam.Checked = true;
+                        break;
+                    case 0:
+                        rbt_nu.Checked = true;
+                        break;
+                    default:
+                        rbt_khac.Checked = true;
+                        break;
+                }
+            }
+        }
     }
 }
