@@ -31,7 +31,6 @@
             this.butthanhtoan = new System.Windows.Forms.Button();
             this.butquaylai = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttimkiem = new System.Windows.Forms.Button();
             this.txtkhoa = new System.Windows.Forms.TextBox();
             this.txttien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,22 +99,13 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Danh sách hàng hóa";
             // 
-            // buttimkiem
-            // 
-            this.buttimkiem.Location = new System.Drawing.Point(420, 21);
-            this.buttimkiem.Name = "buttimkiem";
-            this.buttimkiem.Size = new System.Drawing.Size(76, 23);
-            this.buttimkiem.TabIndex = 4;
-            this.buttimkiem.Text = "Tìm kiếm";
-            this.buttimkiem.UseVisualStyleBackColor = true;
-            this.buttimkiem.Click += new System.EventHandler(this.buttimkiem_Click);
-            // 
             // txtkhoa
             // 
             this.txtkhoa.Location = new System.Drawing.Point(154, 23);
             this.txtkhoa.Name = "txtkhoa";
-            this.txtkhoa.Size = new System.Drawing.Size(260, 20);
+            this.txtkhoa.Size = new System.Drawing.Size(170, 20);
             this.txtkhoa.TabIndex = 5;
+            this.txtkhoa.TextChanged += new System.EventHandler(this.txtkhoa_TextChanged);
             // 
             // txttien
             // 
@@ -473,7 +463,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txttien);
             this.Controls.Add(this.txtkhoa);
-            this.Controls.Add(this.buttimkiem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butquaylai);
             this.Controls.Add(this.butthanhtoan);
@@ -491,7 +480,6 @@
         private System.Windows.Forms.Button butthanhtoan;
         private System.Windows.Forms.Button butquaylai;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttimkiem;
         private System.Windows.Forms.TextBox txtkhoa;
         private System.Windows.Forms.TextBox txttien;
         private System.Windows.Forms.Label label2;

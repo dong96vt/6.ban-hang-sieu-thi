@@ -53,11 +53,6 @@ namespace BanHangSieuThi
         {
             this.Close();
         }
-        // Click button buttimkiem
-        private void buttimkiem_Click(object sender, EventArgs e)
-        {
-            Banhang_Load(sender, e);
-        }
         // Click button butthanhtoan
         private void butthanhtoan_Click(object sender, EventArgs e)
         {
@@ -68,12 +63,19 @@ namespace BanHangSieuThi
             foreach (ListViewItem item in ls_chon.Items)
             {
                 sanpham_o sp = new sanpham_o();
+                hanghoa_b bus = new hanghoa_b();
                 sp.ma = (Convert.ToInt32(ma) + i).ToString();
                 sp.mahienthi = "SP" + sp.ma;
                 sp.soluong = Convert.ToInt32(item.SubItems[2].Text);
                 sp.hoadonma = ma;
                 sp.hanghoama = item.SubItems[0].Text;
                 ls.Add(sp);
+                string ck = bus.check_kho(sp.hanghoama, sp.soluong);
+                if (ck == "0") 
+                {
+                    MessageBox.Show("Kho đã hết sản phẩm "+sp.hanghoama+"!");
+                    return;
+                }
                 i++;
             }
             if (i == 0)
@@ -158,9 +160,12 @@ namespace BanHangSieuThi
             }
             if (kt == 1)
             {
+                ls_chon.Items.Clear(); // Xóa sảm phẩm đã mua trong list View
                 MessageBox.Show("Thành công !");
                 return;
             }
+            
+            
         }
         // Load dữ liệu lên DataGridView dgvhanghoa
         private void Banhang_Load(object sender, EventArgs e)
@@ -340,6 +345,10 @@ namespace BanHangSieuThi
                         break;
                 }
             }
+        }
+        private void txtkhoa_TextChanged(object sender, EventArgs e)
+        {
+            Banhang_Load(sender, e);
         }
     }
 }

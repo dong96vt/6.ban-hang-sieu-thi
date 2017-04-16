@@ -1,3 +1,4 @@
+create database TTN_banhangsieuthi
 
 USE [TTN_banhangsieuthi]
 GO
