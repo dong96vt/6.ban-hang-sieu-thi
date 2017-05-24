@@ -11,8 +11,9 @@ namespace BanHangSieuThi
     {
         public static SqlConnection Conn()
         {
-           string connString = @"Data Source=SUPER\SQLEXPRESS ;Initial Catalog=TTN_banhangsieuthi ;Persist Security Info=True; User ID=detai6 ;Password=detai6 ";
-           SqlConnection conn = new SqlConnection(connString);
+           //string connString = @"Data Source=SUPER\SQLEXPRESS ;Initial Catalog=TTN_banhangsieuthi ;Persist Security Info=True; User ID=detai6 ;Password=detai6 ";
+            string connString = @"Data Source = QUYETTHANG; Initial Catalog = Quanlybanhan1; Integrated Security = True";
+            SqlConnection conn = new SqlConnection(connString);
            return conn;
         }
        

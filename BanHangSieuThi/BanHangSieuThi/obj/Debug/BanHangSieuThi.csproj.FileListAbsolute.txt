@@ -40,3 +40,18 @@ C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_login.resources
 C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Banhang.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Huongdan.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_login.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Menu.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Properties.Resources.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.QLNhanvien.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
+F:\hoc tap\thuctapnhom\github\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
