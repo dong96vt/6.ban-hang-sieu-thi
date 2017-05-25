@@ -16,7 +16,7 @@ namespace BanHangSieuThi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QLNhanvien());
+            Application.Run(new frm_login());
         }
     }
 }

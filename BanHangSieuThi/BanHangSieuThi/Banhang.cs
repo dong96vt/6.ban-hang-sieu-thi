@@ -53,11 +53,6 @@ namespace BanHangSieuThi
         {
             this.Close();
         }
-        // Click button buttimkiem
-        private void buttimkiem_Click(object sender, EventArgs e)
-        {
-            Banhang_Load(sender, e);
-        }
         // Click button butthanhtoan
         private void butthanhtoan_Click(object sender, EventArgs e)
         {
@@ -68,12 +63,19 @@ namespace BanHangSieuThi
             foreach (ListViewItem item in ls_chon.Items)
             {
                 sanpham_o sp = new sanpham_o();
+                hanghoa_b bus = new hanghoa_b();
                 sp.ma = (Convert.ToInt32(ma) + i).ToString();
                 sp.mahienthi = "SP" + sp.ma;
                 sp.soluong = Convert.ToInt32(item.SubItems[2].Text);
                 sp.hoadonma = ma;
                 sp.hanghoama = item.SubItems[0].Text;
                 ls.Add(sp);
+                string ck = bus.check_kho(sp.hanghoama, sp.soluong);
+                if (ck == "0") 
+                {
+                    MessageBox.Show("Kho đã hết sản phẩm "+sp.hanghoama+"!");
+                    return;
+                }
                 i++;
             }
             if (i == 0)
@@ -108,7 +110,8 @@ namespace BanHangSieuThi
                     kh.cmtnd = txtcmtnd.Text;
                     if (rbt_nam.Checked == true) kh.gioitinh = 1;
                     if (rbt_nu.Checked == true) kh.gioitinh = 0;
-                    else kh.gioitinh = -1;
+                    if (rbt_khac.Checked == true) kh.gioitinh = -1;
+                    if (rbt_nam.Checked == false && rbt_nu.Checked == false && rbt_khac.Checked == false) MessageBox.Show("Chưa chọn giới tính !");
                     kt = b.insert(kh);
                     if (kt == -1)
                     {
@@ -158,9 +161,15 @@ namespace BanHangSieuThi
             }
             if (kt == 1)
             {
+                ls_chon.Items.Clear(); // Xóa sảm phẩm đã mua trong list View
+                tien = null;
+                txttien.Text = null;
+                txttienchu.Text = null;
                 MessageBox.Show("Thành công !");
                 return;
             }
+            
+            
         }
         // Load dữ liệu lên DataGridView dgvhanghoa
         private void Banhang_Load(object sender, EventArgs e)
@@ -340,6 +349,10 @@ namespace BanHangSieuThi
                         break;
                 }
             }
+        }
+        private void txtkhoa_TextChanged(object sender, EventArgs e)
+        {
+            Banhang_Load(sender, e);
         }
     }
 }

@@ -41,6 +41,8 @@ namespace BanHangSieuThi
                         MessageBox.Show("Nhập sai tên đăng nhập, mời nhập lại !");
                         break;
                     }
+                case null:
+                    { break; }
                 default:
                     {
                         Menu f = new Menu(manv);

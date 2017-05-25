@@ -59,5 +59,7 @@ namespace BanHangSieuThi
             Huongdan f = new Huongdan();
             f.ShowDialog();
         }
+
+
     }
 }

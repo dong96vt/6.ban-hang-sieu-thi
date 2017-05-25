@@ -135,9 +135,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QLNhanvien.resx">
-      <DependentUpon>QLNhanvien.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="QLNhanvien.resx" />
     <EmbeddedResource Include="Themhang.resx">
       <DependentUpon>Themhang.cs</DependentUpon>
     </EmbeddedResource>

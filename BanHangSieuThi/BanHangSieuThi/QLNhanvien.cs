@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace BanHangSieuThi
 {
     public partial class QLNhanvien : Form
@@ -17,26 +16,26 @@ namespace BanHangSieuThi
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=QUYETTHANG;Initial Catalog=Quanlybanhan1;Integrated Security=True");
+        SqlConnection conn = Connection.Conn();
         private void hienthi()
         {
             List<nhanvien_o> lstNhanvien = new List<nhanvien_o>();
             conn.Open();
-            string sql = "select *  from nhanvien   ";
+            string sql = "select * from nhanvien ";
             SqlCommand comm = new SqlCommand(sql, conn);
             comm.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(comm);
             DataTable tb = new DataTable();
             da.Fill(tb);
             foreach (DataRow dr in tb.Rows)
-            {
+            { 
                 nhanvien_o nv = new nhanvien_o();
                 nv.ma = dr[0].ToString();
                 nv.mahienthi = dr[1].ToString();
                 nv.hoten = dr[2].ToString();
                 nv.quequan = dr[3].ToString();
                 nv.diachi = dr[4].ToString();
-                nv.gioitinh = int.Parse(dr[5].ToString());
+                nv.gioitinh = int.Parse(dr[5].ToString()) ;
                 nv.ngaysinh = DateTime.Parse(dr[6].ToString());
                 nv.luong = int.Parse(dr[7].ToString());
                 nv.chucvu = dr[8].ToString();
@@ -46,8 +45,8 @@ namespace BanHangSieuThi
             }
 
             conn.Close();
-            dg1.DataSource = tb;
-            dg1.Show();
+            dg1.DataSource = null;
+            dg1.DataSource =tb;
         }
         private void setnull()
         {
@@ -63,17 +62,21 @@ namespace BanHangSieuThi
 
         }
 
+        private void QLNhanvien_Load(object sender, EventArgs e)
+        {
+            hienthi();
+        }
+
         private void btthem_Click(object sender, EventArgs e)
         {
             int gt;
             if (rdnam.Checked)
                 gt = 1;
-            if (rdnu.Checked)
-                gt = 0;
-            else gt = -1;
+            else gt = 0;
             conn.Open();
+            string ma = DateTime.Now.ToString("yymmddhhss");
             SqlCommand comm = new SqlCommand("ThemNhanvien", conn);
-            comm.Parameters.Add(new SqlParameter("@ma", txtma.Text));
+            comm.Parameters.Add(new SqlParameter("@ma", ma));
             comm.Parameters.Add(new SqlParameter("@mahienthi", txtmahienthi.Text));
             comm.Parameters.Add(new SqlParameter("@hoten", txthvt.Text));
             comm.Parameters.Add(new SqlParameter("@quequan", txtadd.Text));
@@ -93,18 +96,11 @@ namespace BanHangSieuThi
             catch
             {
                 MessageBox.Show("Nhập lỗi ");
-
             }
             conn.Close();
             hienthi();
             setnull();
 
-
-        }
-
-        private void QLNhanvien_Load(object sender, EventArgs e)
-        {
-            hienthi();
         }
 
         private void btsua_Click(object sender, EventArgs e)
@@ -112,9 +108,7 @@ namespace BanHangSieuThi
             int gt;
             if (rdnam.Checked)
                 gt = 1;
-            if (rdnu.Checked)
-                gt = 0;
-            else gt = -1;
+            else gt = 0;
             conn.Open();
             SqlCommand comm = new SqlCommand("UpdateNhanvien", conn);
             comm.Parameters.Add(new SqlParameter("@ma", txtma.Text));
@@ -138,6 +132,7 @@ namespace BanHangSieuThi
         private void btxoa_Click(object sender, EventArgs e)
         {
             conn.Open();
+
             SqlCommand comm = new SqlCommand("XoaNhanvien", conn);
             comm.Parameters.Add(new SqlParameter("@ma", txtma.Text));
             comm.CommandType = CommandType.StoredProcedure;
@@ -158,51 +153,38 @@ namespace BanHangSieuThi
             }
             conn.Close();
             hienthi();
-            setnull();
+            //setnull();
         }
 
-        private void timkiem(object sender, EventArgs e)
+        private void bttk_Click(object sender, EventArgs e)
         {
-           
-            if (cbtimkiem.Text == "Họ tên")
-            {
-                conn.Open();
-                string tk = "select * from nhanvien where hoten like N'" + txttk.Text + "%' ";
-                SqlDataAdapter add = new SqlDataAdapter(tk, conn);
-                DataTable dta = new DataTable();
-                add.Fill(dta);
-                dg1.DataSource = dta;
-                conn.Close();
-               
-            }
-            else if (cbtimkiem.Text == "Mã hiển thị ")
-            {
-                
-                conn.Open();
-                string tk = "select * from nhanvien where mahienthi like N'" + txttk.Text + "%' ";
-                SqlDataAdapter add = new SqlDataAdapter(tk, conn);
-                DataTable dta = new DataTable();
-                add.Fill(dta);
-                dg1.DataSource = dta;
-                conn.Close();
-              
-            }
+            conn.Open();
+            string ma = txttk.Text;
+            string hoten = txttk.Text;
+            string tk = "select * from nhanvien where ma=N'" + ma + "'or hoten like N'%" + hoten + "%' ";
+            SqlDataAdapter add = new SqlDataAdapter(tk, conn);
+            DataTable dta = new DataTable();
+            add.Fill(dta);
+            dg1.DataSource = dta;
+            conn.Close();
         }
-        int index;
-        private void dg1_Click(object sender, EventArgs e)
+
+        private void dg1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            index = dg1.CurrentRow.Index;
-            txtma.Text = dg1.Rows[index].Cells[0].Value.ToString();
-            txtmahienthi.Text = dg1.Rows[index].Cells[1].Value.ToString();
-            txthvt.Text = dg1.Rows[index].Cells[2].Value.ToString();
-            txtadd.Text = dg1.Rows[index].Cells[3].Value.ToString();
-            txtdiachi.Text = dg1.Rows[index].Cells[4].Value.ToString();
-           
-            dtns.Text = dg1.Rows[index].Cells[6].Value.ToString();
-            txtluong.Text = dg1.Rows[index].Cells[7].Value.ToString();
-            txtchucvu.Text = dg1.Rows[index].Cells[8].Value.ToString();
-            txtid.Text = dg1.Rows[index].Cells[9].Value.ToString();
-            txtpass.Text = dg1.Rows[index].Cells[10].Value.ToString();
+            txtma.Text = dg1.CurrentRow.Cells[0].Value.ToString();
+            txtmahienthi.Text = dg1.CurrentRow.Cells[1].Value.ToString();
+            txthvt.Text = dg1.CurrentRow.Cells[2].Value.ToString();
+            txtadd.Text = dg1.CurrentRow.Cells[3].Value.ToString();
+            txtdiachi.Text = dg1.CurrentRow.Cells[4].Value.ToString();
+            dtns.Text = dg1.CurrentRow.Cells[6].Value.ToString();
+            txtluong.Text = dg1.CurrentRow.Cells[7].Value.ToString();
+            txtchucvu.Text = dg1.CurrentRow.Cells[8].Value.ToString();
+            txtid.Text = dg1.CurrentRow.Cells[9].Value.ToString();
+            txtpass.Text = dg1.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        private void txtma_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
