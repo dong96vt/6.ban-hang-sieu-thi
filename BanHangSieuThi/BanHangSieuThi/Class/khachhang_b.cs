@@ -20,7 +20,7 @@ namespace BanHangSieuThi.Class
                                        ,[hoten]
                                        ,[diachi]
                                        ,[gioitinh]
-                                       ,[ngaysinh]
+                                       
                                        ,[cmtnd]
                                        ,[sdt])
                                  VALUES
@@ -29,7 +29,7 @@ namespace BanHangSieuThi.Class
                                        ,@hoten
                                        ,@diachi
                                        ,@gioitinh
-                                       ,@ngaysinh
+                                       
                                        ,@cmtnd
                                        ,@sdt)";
             try
@@ -47,7 +47,7 @@ namespace BanHangSieuThi.Class
             cm.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = kh.diachi;
             cm.Parameters.Add("@cmtnd", SqlDbType.VarChar).Value = kh.cmtnd;
             cm.Parameters.Add("@gioitinh", SqlDbType.Int).Value = kh.gioitinh;
-            cm.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = kh.ngaysinh;
+            //cm.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = null;
             cm.Parameters.Add("@sdt", SqlDbType.VarChar).Value = kh.sdt;
             try 
             {

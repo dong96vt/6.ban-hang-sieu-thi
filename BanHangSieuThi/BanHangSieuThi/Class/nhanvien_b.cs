@@ -24,6 +24,7 @@ namespace BanHangSieuThi.Class
             catch
             {
                 MessageBox.Show("Lỗi kết nối SQL");
+                return null;
             }
 
             SqlCommand cm = new SqlCommand("dbo.dangnhap", conn);

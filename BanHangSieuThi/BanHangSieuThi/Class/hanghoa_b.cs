@@ -16,11 +16,11 @@ namespace BanHangSieuThi.Class
             string selec_hanghoa;
             if (!String.IsNullOrEmpty(khoatk))
             {
-                selec_hanghoa = "Select * from hanghoa where ma like '%'+@khoatk+'%'";
+                selec_hanghoa = "Select * from hanghoa where ten like '%'+@khoatk+'%'";
             }
             else selec_hanghoa = "Select * from hanghoa";
             SqlConnection conn = Connection.Conn();
-            try
+            try 
             {
                 conn.Open();
             }
@@ -29,7 +29,7 @@ namespace BanHangSieuThi.Class
                 return -1;
             }
             SqlCommand cm = new SqlCommand(selec_hanghoa, conn);
-            cm.Parameters.Add("@khoatk", SqlDbType.NVarChar).Value = khoatk;
+            cm.Parameters.Add("@khoatk", SqlDbType.NVarChar).SqlValue = khoatk;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cm;

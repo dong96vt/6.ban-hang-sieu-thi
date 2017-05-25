@@ -101,9 +101,9 @@
             // 
             // txtkhoa
             // 
-            this.txtkhoa.Location = new System.Drawing.Point(154, 23);
+            this.txtkhoa.Location = new System.Drawing.Point(129, 23);
             this.txtkhoa.Name = "txtkhoa";
-            this.txtkhoa.Size = new System.Drawing.Size(170, 20);
+            this.txtkhoa.Size = new System.Drawing.Size(195, 20);
             this.txtkhoa.TabIndex = 5;
             this.txtkhoa.TextChanged += new System.EventHandler(this.txtkhoa_TextChanged);
             // 
@@ -208,9 +208,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(18, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 13);
+            this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Nhập mã / tên hàng hóa :";
+            this.label6.Text = "Nhập tên hàng hóa :";
             // 
             // dgvhanghoa
             // 

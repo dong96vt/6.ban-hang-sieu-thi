@@ -110,7 +110,8 @@ namespace BanHangSieuThi
                     kh.cmtnd = txtcmtnd.Text;
                     if (rbt_nam.Checked == true) kh.gioitinh = 1;
                     if (rbt_nu.Checked == true) kh.gioitinh = 0;
-                    else kh.gioitinh = -1;
+                    if (rbt_khac.Checked == true) kh.gioitinh = -1;
+                    if (rbt_nam.Checked == false && rbt_nu.Checked == false && rbt_khac.Checked == false) MessageBox.Show("Chưa chọn giới tính !");
                     kt = b.insert(kh);
                     if (kt == -1)
                     {
@@ -161,6 +162,9 @@ namespace BanHangSieuThi
             if (kt == 1)
             {
                 ls_chon.Items.Clear(); // Xóa sảm phẩm đã mua trong list View
+                tien = null;
+                txttien.Text = null;
+                txttienchu.Text = null;
                 MessageBox.Show("Thành công !");
                 return;
             }

@@ -54,3 +54,4 @@ O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj
 O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
 O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
 O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.QLNhanvien.resources
