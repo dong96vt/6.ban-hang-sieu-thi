@@ -52,11 +52,18 @@
     <Compile Include="Banhang.Designer.cs">
       <DependentUpon>Banhang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\chitietHD.cs" />
     <Compile Include="Class\hanghoa_b.cs" />
     <Compile Include="Class\hoadon_b.cs" />
     <Compile Include="Class\khachhang_b.cs" />
     <Compile Include="Class\nhanvien_b.cs" />
     <Compile Include="Class\sanpham_b.cs" />
+    <Compile Include="frmInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInHoaDon.Designer.cs">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +124,9 @@
     <EmbeddedResource Include="Banhang.resx">
       <DependentUpon>Banhang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInHoaDon.resx">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Huongdan.resx">
       <DependentUpon>Huongdan.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,8 +144,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLNhanvien.resx" />
+    <EmbeddedResource Include="QLKhachhang.resx">
+      <DependentUpon>QLKhachhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Themhang.resx">
       <DependentUpon>Themhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +167,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows-7-user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khachhang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box_crate_upload_save_delivery_package-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booklet-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieframe_dll_52_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_dll_007_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart-search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows-Turn-Off-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows-Turn-Off-icon - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm-Tick-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4099-69624.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietnam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chinaz0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green-Buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows-Close-Program-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18_10_1299801213_51_coopmart1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chinaz16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿namespace BanHangSieuThi
 {
-    partial class QLKhachhang
+    partial class frm_quanlyKH
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frm_quanlyKH
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Khachhang";
+            this.ClientSize = new System.Drawing.Size(902, 522);
+            this.Name = "frm_quanlyKH";
+            this.Text = "Quản lý khách hàng";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

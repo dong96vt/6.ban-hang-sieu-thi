@@ -26,7 +26,7 @@ namespace BanHangSieuThi
 
         private void button6_MouseClick(object sender, MouseEventArgs e)
         {
-            QLKhachhang f = new QLKhachhang();
+            frm_quanlyKH f = new frm_quanlyKH();
             f.ShowDialog();
         }
 
@@ -59,7 +59,16 @@ namespace BanHangSieuThi
             Huongdan f = new Huongdan();
             f.ShowDialog();
         }
-
+         protected override bool ProcessCmdKey(ref Message msg, Keys keydata) 
+        { 
+            if (keydata == Keys.F1) 
+            {
+                Huongdan f = new Huongdan();
+                f.ShowDialog(); 
+                return true; 
+            } 
+            return false; 
+        }  
 
     }
 }

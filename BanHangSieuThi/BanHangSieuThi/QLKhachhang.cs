@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BanHangSieuThi
 {
-    public partial class QLKhachhang : Form
+    public partial class frm_quanlyKH : Form
     {
-        public QLKhachhang()
+        public frm_quanlyKH()
         {
             InitializeComponent();
         }

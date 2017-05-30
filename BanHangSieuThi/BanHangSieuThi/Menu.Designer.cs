@@ -28,110 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_manv = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(441, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thêm hàng hóa mới";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(216, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 45);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Bán hàng";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(313, 95);
+            this.button3.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button3.Image = global::BanHangSieuThi.Properties.Resources.chart_search_icon;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.Location = new System.Drawing.Point(189, 196);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 45);
+            this.button3.Size = new System.Drawing.Size(158, 164);
             this.button3.TabIndex = 2;
             this.button3.Text = "Kiểm tra kho";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button3_MouseClick);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(38, 93);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 45);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Tìm hàng hóa";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button4_MouseClick);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(38, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 45);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Quản lý nhân viên";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button5_MouseClick);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(216, 15);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(172, 45);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Quản lý khách hàng";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button6_MouseClick);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(441, 95);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(129, 43);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Hướng dẫn sử dụng";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button7_MouseClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(438, 162);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(547, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Mã nhân viên:";
+            this.label1.Text = "Mã NV :";
             // 
             // lb_manv
             // 
             this.lb_manv.AutoSize = true;
-            this.lb_manv.Location = new System.Drawing.Point(519, 162);
+            this.lb_manv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_manv.Location = new System.Drawing.Point(617, 342);
             this.lb_manv.Name = "lb_manv";
-            this.lb_manv.Size = new System.Drawing.Size(16, 13);
+            this.lb_manv.Size = new System.Drawing.Size(22, 18);
             this.lb_manv.TabIndex = 8;
             this.lb_manv.Text = "-1";
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button7.Image = global::BanHangSieuThi.Properties.Resources.booklet_128;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.Location = new System.Drawing.Point(369, 196);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(158, 164);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Hướng dẫn sử dụng (F1)";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button7_MouseClick);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button6.Image = global::BanHangSieuThi.Properties.Resources.khachhang;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.Location = new System.Drawing.Point(189, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(158, 164);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Khách hàng";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button6_MouseClick);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button5.Image = global::BanHangSieuThi.Properties.Resources.nhanvien;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.Location = new System.Drawing.Point(12, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(158, 164);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Nhân viên";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button5_MouseClick);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button4.Image = global::BanHangSieuThi.Properties.Resources.Search_icon;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.Location = new System.Drawing.Point(12, 196);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(158, 164);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Tìm hàng hóa";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button4_MouseClick);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Image = global::BanHangSieuThi.Properties.Resources.Money_128;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.Location = new System.Drawing.Point(369, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 164);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Bán hàng";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button1.Image = global::BanHangSieuThi.Properties.Resources.Box_crate_upload_save_delivery_package_128;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.Location = new System.Drawing.Point(550, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 164);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Thêm hàng hóa";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 195);
+            this.ClientSize = new System.Drawing.Size(721, 379);
             this.Controls.Add(this.lb_manv);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);

@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.butthanhtoan = new System.Windows.Forms.Button();
-            this.butquaylai = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Banhang));
             this.label1 = new System.Windows.Forms.Label();
             this.txtkhoa = new System.Windows.Forms.TextBox();
             this.txttien = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.txttienchu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvhanghoa = new System.Windows.Forms.DataGridView();
-            this.butmua = new System.Windows.Forms.Button();
             this.txtsoluong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,28 +65,11 @@
             this.rbt_nu = new System.Windows.Forms.RadioButton();
             this.rbt_khac = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
+            this.butmua = new System.Windows.Forms.Button();
+            this.butquaylai = new System.Windows.Forms.Button();
+            this.butthanhtoan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhanghoa)).BeginInit();
             this.SuspendLayout();
-            // 
-            // butthanhtoan
-            // 
-            this.butthanhtoan.Location = new System.Drawing.Point(560, 487);
-            this.butthanhtoan.Name = "butthanhtoan";
-            this.butthanhtoan.Size = new System.Drawing.Size(115, 33);
-            this.butthanhtoan.TabIndex = 0;
-            this.butthanhtoan.Text = "Thanh toán";
-            this.butthanhtoan.UseVisualStyleBackColor = true;
-            this.butthanhtoan.Click += new System.EventHandler(this.butthanhtoan_Click);
-            // 
-            // butquaylai
-            // 
-            this.butquaylai.Location = new System.Drawing.Point(400, 487);
-            this.butquaylai.Name = "butquaylai";
-            this.butquaylai.Size = new System.Drawing.Size(113, 33);
-            this.butquaylai.TabIndex = 1;
-            this.butquaylai.Text = "Quay lại";
-            this.butquaylai.UseVisualStyleBackColor = true;
-            this.butquaylai.Click += new System.EventHandler(this.butquaylai_Click);
             // 
             // label1
             // 
@@ -223,29 +204,21 @@
             this.dgvhanghoa.Size = new System.Drawing.Size(312, 328);
             this.dgvhanghoa.TabIndex = 15;
             // 
-            // butmua
-            // 
-            this.butmua.Location = new System.Drawing.Point(223, 424);
-            this.butmua.Name = "butmua";
-            this.butmua.Size = new System.Drawing.Size(96, 23);
-            this.butmua.TabIndex = 16;
-            this.butmua.Text = "Mua";
-            this.butmua.UseVisualStyleBackColor = true;
-            this.butmua.Click += new System.EventHandler(this.butmua_Click);
-            // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(106, 426);
+            this.txtsoluong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtsoluong.Location = new System.Drawing.Point(123, 441);
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(100, 20);
+            this.txtsoluong.Size = new System.Drawing.Size(100, 22);
             this.txtsoluong.TabIndex = 17;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 429);
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(18, 444);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.Size = new System.Drawing.Size(99, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "Nhập số lượng:";
             // 
@@ -426,11 +399,47 @@
             this.label15.TabIndex = 37;
             this.label15.Text = "Giới tính:";
             // 
+            // butmua
+            // 
+            this.butmua.BackgroundImage = global::BanHangSieuThi.Properties.Resources.Green_Buy;
+            this.butmua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butmua.Location = new System.Drawing.Point(263, 426);
+            this.butmua.Name = "butmua";
+            this.butmua.Size = new System.Drawing.Size(61, 53);
+            this.butmua.TabIndex = 16;
+            this.butmua.UseVisualStyleBackColor = true;
+            this.butmua.Click += new System.EventHandler(this.butmua_Click);
+            // 
+            // butquaylai
+            // 
+            this.butquaylai.BackgroundImage = global::BanHangSieuThi.Properties.Resources.Windows_Close_Program_icon__1_;
+            this.butquaylai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butquaylai.Location = new System.Drawing.Point(758, 454);
+            this.butquaylai.Name = "butquaylai";
+            this.butquaylai.Size = new System.Drawing.Size(90, 80);
+            this.butquaylai.TabIndex = 1;
+            this.butquaylai.UseVisualStyleBackColor = true;
+            this.butquaylai.Click += new System.EventHandler(this.butquaylai_Click);
+            // 
+            // butthanhtoan
+            // 
+            this.butthanhtoan.BackgroundImage = global::BanHangSieuThi.Properties.Resources.Money_icon;
+            this.butthanhtoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butthanhtoan.Location = new System.Drawing.Point(883, 454);
+            this.butthanhtoan.Name = "butthanhtoan";
+            this.butthanhtoan.Size = new System.Drawing.Size(90, 80);
+            this.butthanhtoan.TabIndex = 0;
+            this.butthanhtoan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.butthanhtoan.UseVisualStyleBackColor = true;
+            this.butthanhtoan.Click += new System.EventHandler(this.butthanhtoan_Click);
+            // 
             // Banhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 531);
+            this.BackgroundImage = global::BanHangSieuThi.Properties.Resources.chinaz16;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1038, 546);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.rbt_khac);
             this.Controls.Add(this.rbt_nu);
@@ -466,6 +475,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butquaylai);
             this.Controls.Add(this.butthanhtoan);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Banhang";
             this.Text = "Bán hàng";
             this.Load += new System.EventHandler(this.Banhang_Load);

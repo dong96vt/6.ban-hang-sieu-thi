@@ -57,12 +57,15 @@ namespace BanHangSieuThi
         private void butthanhtoan_Click(object sender, EventArgs e)
         {
             string ma = DateTime.Now.ToString("yymmddhhss");
+            chitietHD cthd = new chitietHD();
+            List<GioHang> ls_gh = new List<GioHang>();
             //lấy dữ liệu từ listview và kiểm tra
             List<sanpham_o> ls = new List<sanpham_o>();
             int i = 0;
             foreach (ListViewItem item in ls_chon.Items)
             {
                 sanpham_o sp = new sanpham_o();
+                GioHang gh = new GioHang();
                 hanghoa_b bus = new hanghoa_b();
                 sp.ma = (Convert.ToInt32(ma) + i).ToString();
                 sp.mahienthi = "SP" + sp.ma;
@@ -70,6 +73,11 @@ namespace BanHangSieuThi
                 sp.hoadonma = ma;
                 sp.hanghoama = item.SubItems[0].Text;
                 ls.Add(sp);
+                gh.masanpham = sp.ma;
+                gh.soluong = sp.soluong.ToString();
+                gh.gia = item.SubItems[3].Text;
+                gh.tensp = item.SubItems[1].Text;
+                ls_gh.Add(gh);
                 string ck = bus.check_kho(sp.hanghoama, sp.soluong);
                 if (ck == "0") 
                 {
@@ -78,6 +86,7 @@ namespace BanHangSieuThi
                 }
                 i++;
             }
+            cthd.giohang = ls_gh;
             if (i == 0)
             {
                 MessageBox.Show("Chưa chọn sản phẩm !");
@@ -92,16 +101,21 @@ namespace BanHangSieuThi
             hd.nhanvienma = lb_manhanvien.Text;
             hd.tonggia = Convert.ToInt32(tien);
             hd.mahienthi = "HD" + ma;
-            
+
+            cthd.mahoadon = hd.ma;
+            cthd.manhanvien = lb_manhanvien.Text;
+            cthd.ngayviet = hd.ngayviet;
+            cthd.tien = tien;
              //insert khách hàng (Nếu là khách mới) và gán giá trị cho khachhangma
+            
             if (cbboqua.Checked == true) hd.khachhangma = "KHNULL";
             else
             {
                 if (cb_khachquen.Checked == false)
                 {
-                    if (txthoten.Text == null && txtcmtnd.Text == null && txtsdt.Text == null) MessageBox.Show("Chưa điền thông tin khách hàng !");
-                    khachhang_o kh = new khachhang_o();
+                    if (txthoten.Text == null && txtcmtnd.Text == null && txtsdt.Text == null) MessageBox.Show("Chưa điền thông tin khách hàng !");                   
                     khachhang_b b = new khachhang_b();
+                    khachhang_o kh = new khachhang_o();
                     kh.ma = ma;
                     kh.mahienthi = "KH" + kh.ma;
                     kh.sdt = txtsdt.Text;
@@ -130,6 +144,8 @@ namespace BanHangSieuThi
                     if (cbb_khachquen.SelectedValue.ToString().Length > 10) MessageBox.Show("Chưa chọn khách hàng !");
                     else hd.khachhangma = cbb_khachquen.SelectedValue.ToString();
                 }
+                cthd.hoten_kh = txthoten.Text;
+                cthd.diachi_kh = txtdiachi.Text;
             }
             
              //insert hóa đơn
@@ -165,7 +181,9 @@ namespace BanHangSieuThi
                 tien = null;
                 txttien.Text = null;
                 txttienchu.Text = null;
-                MessageBox.Show("Thành công !");
+                MessageBox.Show("Thành công, Hãy in hóa đơn !");
+                frm_InHD f = new frm_InHD(cthd);
+                f.ShowDialog();
                 return;
             }
             

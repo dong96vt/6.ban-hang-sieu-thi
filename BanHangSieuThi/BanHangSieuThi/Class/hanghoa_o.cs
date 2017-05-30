@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BanHangSieuThi
 {
-    class hanghoa_o
+    public class hanghoa_o
     {
         public string ma;
         public string mahienthi;
