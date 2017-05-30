@@ -10,7 +10,7 @@ namespace BanHangSieuThi
 {
     class Connection
     {
-        public static SqlConnection conn;
+        public static SqlConnection conn = Conn();
         public static SqlCommand cmd;
         public static SqlDataAdapter da;
         public static SqlConnection Conn()
@@ -21,6 +21,7 @@ namespace BanHangSieuThi
         }
         public static DataTable getDataTable(string sql)
         {
+            conn.Open();
             // tạo đối tượng trỏ tới dl trong database 
             cmd = new SqlCommand(sql, conn);
             // dtg để lưu dữ liệu lên database 
@@ -31,15 +32,16 @@ namespace BanHangSieuThi
             da.Fill(table);
             da.Dispose();
             cmd.Dispose();
+            conn.Close();
             return table;
         }
         public static void Excute(string sql)
         {
-            Conn();
+            conn.Open();
             cmd = new SqlCommand(sql, conn);
             //gọi hàm để có thể thực hiện thao tác Delete Insert Update
             cmd.ExecuteNonQuery();
-
+            conn.Close();
         }
        
     }

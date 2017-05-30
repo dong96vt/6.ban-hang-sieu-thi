@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,10 @@ namespace BanHangSieuThi
     {
         public void showData()
         {
-            Connection.Conn();
+            //SqlConnection conn = Connection.Conn();
             var vv = Connection.getDataTable("Select * from hanghoa");
             vv.Columns["ma"].ColumnName = "Mã Hàng Hóa";
-            vv.Columns["mahienthi"].ColumnName = "Mã Hàng Hóa";
+            vv.Columns["mahienthi"].ColumnName = "Mã Hiển Thị";
             vv.Columns["ten"].ColumnName = "Tên Hàng Hóa";
             vv.Columns["soluongcon"].ColumnName = "Số Lượng";
             vv.Columns["loaihang"].ColumnName = "Loại Hàng";
@@ -49,18 +50,19 @@ namespace BanHangSieuThi
         {
             try
             {
-                string a = txtMaHH.Text;
+                string a = DateTime.Now.ToString("yymmddhhss");
                 string b = txtMaHT.Text;
                 string c = txtTenHH.Text;
                 string d = txtSL.Text;
                 string g = txtLoaiHang.Text;
                 string h = txtGia.Text;
-                string sql = "Insert into ThietBi values( N'" + a + "' , N'" + b + "' ,N'" + c + "',N'" + d + "',N'" + g + "',N'" + h + "')";
+                string sql = @"Insert into hanghoa values( N'" + a + "' , N'" + b + "' ,N'" + c + "',N'" + d + "',N'" + g + "',N'" + h + "')";
                 Connection.Excute(sql);
                 //this.showData("Select * from hanghoa");
-                this.showData("Select * from hanghoa");
+                
                 this.Clear();
                 MessageBox.Show("Thêm mới thành công!");
+                showData();
             }
 
             catch
@@ -114,15 +116,15 @@ namespace BanHangSieuThi
         {
             try
             {
-                int chiso = dtHanghoa.CurrentRow.Index;
+                //int chiso = dtHanghoa.CurrentRow.Index;
                 string a = txtMaHT.Text;
                 string b = txtTenHH.Text;
                 string c = txtSL.Text;
                 string d = txtLoaiHang.Text;
                 string g = txtGia.Text;
-                string sql = "Update Hanghoa set mahienthi = N'" + a + "' ,  ten = N'" + b + "' , soluong = N'" + c + "' ,loaihangcon = N'" + d + "',gia = N'" + g + "'  where ma = '" + dtHanghoa[0, chiso].Value.ToString() + "' ";
+                string sql = @"UPDATE [dbo].[hanghoa] SET [mahienthi] = N'" + a + "' ,  [ten] = N'" + b + "' , [soluongcon] = N'" + c + "' ,[loaihang] = N'" + d + "',gia = N'" + g + "'  where ma = '" + txtMaHH.Text + "' ";
                 Connection.Excute(sql);
-                this.showData("Select * from hanghoa");
+                this.showData();
                 this.Clear();
                 MessageBox.Show("Sửa thành công!");
             }
@@ -135,17 +137,17 @@ namespace BanHangSieuThi
 
         private void Themhang_Load(object sender, EventArgs e)
         {
-
+            showData();
         }
 
         private void bntXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                int chiso = dtHanghoa.CurrentRow.Index;
-                string sql = "Delete from ThietBi where ma = '" + dtHanghoa[0, chiso].Value.ToString() + "' ";
+                //int chiso = dtHanghoa.CurrentRow.Index;
+                string sql = @"DELETE FROM [dbo].[hanghoa] WHERE  ma = '" + txtMaHH.Text + "' ";
                 Connection.Excute(sql);
-                this.showData("Select * from hanghoa");
+                this.showData();
                 this.Clear();
                 MessageBox.Show("Xóa thành công!");
             }
