@@ -13,10 +13,6 @@ begin
 	return @ma
 end
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ffc0d83686e18c8099332b936314d7746828df95
  -- Kiểm tra số lượng sản phẩm còn lại
 create function check_kho(@ma varchar(10), @soluong int) returns int as
 begin
@@ -43,12 +39,6 @@ end
 =======
 -----------------nhanvien--------------
 >>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
-<<<<<<< HEAD
-=======
-=======
------------------nhanvien--------------
->>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
->>>>>>> ffc0d83686e18c8099332b936314d7746828df95
 create proc ThemNhanvien
 @ma	varchar(10),
 @mahienthi	nvarchar(20),
@@ -66,10 +56,6 @@ begin
 	insert into nhanvien values(@ma,@mahienthi,@hoten,@quequan,@diachi,@gioitinh,@ngaysinh,@luong,@chucvu,@id,@pass)
 end
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ffc0d83686e18c8099332b936314d7746828df95
 	-----------------------
 	
 GO
@@ -82,12 +68,6 @@ GO
 =======
 ----
 >>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
-<<<<<<< HEAD
-=======
-=======
-----
->>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
->>>>>>> ffc0d83686e18c8099332b936314d7746828df95
 create proc UpdateNhanvien
 @ma	varchar(10),
 @mahienthi	nvarchar(20),
@@ -105,10 +85,6 @@ begin
 	Update nhanvien set mahienthi = @mahienthi,hoten = @hoten, quequan = @quequan,diachi= @diachi,gioitinh = @gioitinh,ngaysinh = @ngaysinh,luong = @luong,chucvu = @chucvu,@id=id,@pass=pass where ma = @ma
 end
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ffc0d83686e18c8099332b936314d7746828df95
 	
 
 GO
@@ -120,12 +96,6 @@ GO
 =======
 ----
 >>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
-<<<<<<< HEAD
-=======
-=======
-----
->>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
->>>>>>> ffc0d83686e18c8099332b936314d7746828df95
 create proc XoaNhanvien
 @ma	varchar(10)
 as
