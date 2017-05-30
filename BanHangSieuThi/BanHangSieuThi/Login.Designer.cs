@@ -51,7 +51,7 @@
             this.label1.Location = new System.Drawing.Point(32, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 19);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Tên đăng nhập:";
             // 
             // label2
@@ -62,7 +62,7 @@
             this.label2.Location = new System.Drawing.Point(32, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 19);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Mật khẩu:";
             // 
             // txt_user
@@ -71,7 +71,7 @@
             this.txt_user.Location = new System.Drawing.Point(174, 27);
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(180, 29);
-            this.txt_user.TabIndex = 4;
+            this.txt_user.TabIndex = 0;
             // 
             // txt_pass
             // 
@@ -80,7 +80,7 @@
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(180, 29);
-            this.txt_pass.TabIndex = 5;
+            this.txt_pass.TabIndex = 1;
             // 
             // but_dangnhap
             // 
@@ -126,6 +126,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);

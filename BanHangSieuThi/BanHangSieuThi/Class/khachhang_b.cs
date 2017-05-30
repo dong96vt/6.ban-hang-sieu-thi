@@ -20,7 +20,7 @@ namespace BanHangSieuThi.Class
                                        ,[hoten]
                                        ,[diachi]
                                        ,[gioitinh]
-                                       
+                                       ,[ngaysinh]
                                        ,[cmtnd]
                                        ,[sdt])
                                  VALUES
@@ -29,7 +29,7 @@ namespace BanHangSieuThi.Class
                                        ,@hoten
                                        ,@diachi
                                        ,@gioitinh
-                                       
+                                       ,@ngaysinh
                                        ,@cmtnd
                                        ,@sdt)";
             try
@@ -47,7 +47,8 @@ namespace BanHangSieuThi.Class
             cm.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = kh.diachi;
             cm.Parameters.Add("@cmtnd", SqlDbType.VarChar).Value = kh.cmtnd;
             cm.Parameters.Add("@gioitinh", SqlDbType.Int).Value = kh.gioitinh;
-            //cm.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = null;
+            if (kh.ngaysinh == null) kh.ngaysinh = Convert.ToDateTime("1-1-0");
+            cm.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = kh.ngaysinh;
             cm.Parameters.Add("@sdt", SqlDbType.VarChar).Value = kh.sdt;
             try 
             {
@@ -60,6 +61,107 @@ namespace BanHangSieuThi.Class
             conn.Close();
             return 1;
         }
+        public int select(DataGridView dgv, string table, string khoatk)
+        {
+            string selec_hanghoa;
+            if (!String.IsNullOrWhiteSpace(khoatk))
+            {
+                selec_hanghoa = "Select * from khachhang where hoten like '%'+@khoatk+'%' and ma != 'KHNULL'";
+            }
+            else selec_hanghoa = "Select * from khachhang where ma != 'KHNULL'";
+            SqlConnection conn = Connection.Conn();
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                return -1;
+            }
+            SqlCommand cm = new SqlCommand(selec_hanghoa, conn);
+            cm.Parameters.Add("@khoatk", SqlDbType.NVarChar).SqlValue = khoatk;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cm;
+            conn.Close();
+            try
+            {
+                da.Fill(ds, table);
+            }
+            catch
+            {
+                return -2;
+            }
+            dgv.DataSource = ds.Tables[table].DefaultView;
+            dgv.Refresh();
+            return 1;
+        }
+        public int delete(string ma)
+        {
+            SqlConnection conn = Connection.Conn();
+            string sql = @"DELETE FROM [dbo].[khachhang] WHERE ma = @ma";
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                return -1;
+            }
+            SqlCommand cm = new SqlCommand(sql, conn);
+            cm.Parameters.Add("@ma", SqlDbType.VarChar).Value = ma;
+            
+            try
+            {
+                cm.ExecuteNonQuery();
+            }
+            catch
+            {
+                return -2;
+            }
+            conn.Close();
+            return 1;
+        }
+        public int Update(khachhang_o kh)
+        {
+            SqlConnection conn = Connection.Conn();
+            string sql = @"UPDATE [dbo].[khachhang]
+                                SET   [hoten] = @hoten
+                                      ,[diachi] = @diachi
+                                      ,[gioitinh] = @gioitinh
+                                      ,[ngaysinh] = @ngaysinh
+                                      ,[cmtnd] = @cmtnd
+                                      ,[sdt] = @sdt
+                                WHERE ma = @ma";
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                return -1;
+            }
+            SqlCommand cm = new SqlCommand(sql, conn);
+            cm.Parameters.Add("@ma", SqlDbType.VarChar).Value = kh.ma;
+            cm.Parameters.Add("@hoten", SqlDbType.NVarChar).Value = kh.hoten;
+            cm.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = kh.diachi;
+            cm.Parameters.Add("@cmtnd", SqlDbType.VarChar).Value = kh.cmtnd;
+            cm.Parameters.Add("@gioitinh", SqlDbType.Int).Value = kh.gioitinh;
+            if (kh.ngaysinh == null) kh.ngaysinh = Convert.ToDateTime("1-1-0");
+            cm.Parameters.Add("@ngaysinh", SqlDbType.DateTime).Value = kh.ngaysinh;
+            cm.Parameters.Add("@sdt", SqlDbType.VarChar).Value = kh.sdt;
+            try
+            {
+                cm.ExecuteNonQuery();
+            }
+            catch
+            {
+                return -2;
+            }
+            conn.Close();
+            return 1;
+        }
+
         public int Load_DropDowList(ComboBox cbb)
         {
             SqlConnection conn = Connection.Conn();
@@ -94,6 +196,9 @@ namespace BanHangSieuThi.Class
             {
                 if (dr["ma"].ToString() == ma)
                 {
+                    kh.ma = dr["ma"].ToString();
+                    kh.mahienthi = dr["mahienthi"].ToString();
+                    kh.ngaysinh = Convert.ToDateTime(dr["ngaysinh"]);
                     kh.hoten = dr["hoten"].ToString();
                     kh.diachi = dr["diachi"].ToString();
                     kh.sdt = dr["sdt"].ToString();

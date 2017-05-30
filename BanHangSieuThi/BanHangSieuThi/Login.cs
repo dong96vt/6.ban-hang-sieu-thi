@@ -46,9 +46,9 @@ namespace BanHangSieuThi
                 default:
                     {
                         Menu f = new Menu(manv);
-                        this.Visible = false;
                         f.ShowDialog();
-                        this.Close();
+                        txt_user.Text = null;
+                        txt_pass.Text = null;
                         break;
                     }
             }    

@@ -149,6 +149,9 @@
     <EmbeddedResource Include="QLKhachhang.resx">
       <DependentUpon>QLKhachhang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLNhanvien.resx">
+      <DependentUpon>QLNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Themhang.resx">
       <DependentUpon>Themhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +239,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ok-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Log-Out-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

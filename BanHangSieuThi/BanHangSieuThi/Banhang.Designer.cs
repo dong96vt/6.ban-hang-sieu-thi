@@ -475,8 +475,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butquaylai);
             this.Controls.Add(this.butthanhtoan);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Banhang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bán hàng";
             this.Load += new System.EventHandler(this.Banhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhanghoa)).EndInit();

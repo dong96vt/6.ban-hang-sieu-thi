@@ -68,7 +68,13 @@ namespace BanHangSieuThi
                 return true; 
             } 
             return false; 
-        }  
+        }
+
+         private void btn_Logout_Click(object sender, EventArgs e)
+         {
+             lb_manv.Text = null;
+             this.Close();
+         }  
 
     }
 }

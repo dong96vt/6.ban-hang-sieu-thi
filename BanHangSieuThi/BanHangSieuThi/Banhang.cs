@@ -203,8 +203,7 @@ namespace BanHangSieuThi
             {
                 MessageBox.Show("Lỗi thực thi !");
                 this.Close();
-            }
-            
+            }           
         }
         // Click button butmua
         private void butmua_Click(object sender, EventArgs e)

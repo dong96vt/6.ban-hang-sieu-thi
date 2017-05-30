@@ -12,7 +12,7 @@ namespace BanHangSieuThi
         public string mahienthi;
         public string hoten;
         public string diachi;
-        public DateTime ngaysinh;
+        public DateTime? ngaysinh;
         public string cmtnd;
         public string sdt;
         public int gioitinh;

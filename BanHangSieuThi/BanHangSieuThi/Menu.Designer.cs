@@ -28,36 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_manv = new System.Windows.Forms.Label();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.button3.Image = global::BanHangSieuThi.Properties.Resources.chart_search_icon;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(189, 196);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 164);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Kiểm tra kho";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button3_MouseClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(547, 342);
+            this.label1.Location = new System.Drawing.Point(559, 376);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 7;
@@ -67,11 +54,26 @@
             // 
             this.lb_manv.AutoSize = true;
             this.lb_manv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_manv.Location = new System.Drawing.Point(617, 342);
+            this.lb_manv.Location = new System.Drawing.Point(629, 376);
             this.lb_manv.Name = "lb_manv";
             this.lb_manv.Size = new System.Drawing.Size(22, 18);
             this.lb_manv.TabIndex = 8;
             this.lb_manv.Text = "-1";
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Logout.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.btn_Logout.Image = global::BanHangSieuThi.Properties.Resources.Log_Out_icon;
+            this.btn_Logout.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Logout.Location = new System.Drawing.Point(550, 196);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(158, 164);
+            this.btn_Logout.TabIndex = 9;
+            this.btn_Logout.Text = "Đăng xuất";
+            this.btn_Logout.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Logout.UseVisualStyleBackColor = true;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // button7
             // 
@@ -129,6 +131,20 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button4_MouseClick);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.button3.Image = global::BanHangSieuThi.Properties.Resources.chart_search_icon;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.Location = new System.Drawing.Point(189, 196);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(158, 164);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Kiểm tra kho";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button3_MouseClick);
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -161,7 +177,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 379);
+            this.ClientSize = new System.Drawing.Size(721, 405);
+            this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.lb_manv);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
@@ -172,6 +189,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương Trình Bán Hàng SiêuThị";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,6 +207,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_manv;
+        private System.Windows.Forms.Button btn_Logout;
     }
 }
 

@@ -183,6 +183,16 @@ namespace BanHangSieuThi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Log_Out_icon {
+            get {
+                object obj = ResourceManager.GetObject("Log-Out-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Money_128 {
             get {
                 object obj = ResourceManager.GetObject("Money-128", resourceCulture);

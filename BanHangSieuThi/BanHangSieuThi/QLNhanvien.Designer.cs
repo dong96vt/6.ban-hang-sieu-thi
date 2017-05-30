@@ -361,6 +361,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "QLNhanvien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhanvien";
             this.Load += new System.EventHandler(this.QLNhanvien_Load);
             this.groupBox2.ResumeLayout(false);
