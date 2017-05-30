@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
 E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
 E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
@@ -72,3 +73,62 @@ C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debu
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
+=======
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Menu.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Properties.Resources.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Banhang.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Huongdan.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Khachhang.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Nhanvien.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
+E:\Tài liệu\6. Thực tập nhóm_TH13\6.-B-n-h-ng-si-u-th-\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Banhang.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Huongdan.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Menu.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Properties.Resources.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
+O:\Dong\ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Banhang.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Huongdan.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Menu.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Properties.Resources.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_login.resources
+C:\Users\Nope\Desktop\sss\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Banhang.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Huongdan.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_login.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Menu.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Properties.Resources.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
+O:\Dong\Thực tập nhóm\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.QLNhanvien.resources
+>>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
