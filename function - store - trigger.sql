@@ -12,6 +12,7 @@ begin
 		end
 	return @ma
 end
+<<<<<<< HEAD
  -- Kiểm tra số lượng sản phẩm còn lại
 create function check_kho(@ma varchar(10), @soluong int) returns int as
 begin
@@ -35,6 +36,9 @@ begin
 	delete sanpham where hanghoama = null
 end
 -------------------------------------------proc them sua xoa nhan vien---------------
+=======
+-----------------nhanvien--------------
+>>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
 create proc ThemNhanvien
 @ma	varchar(10),
 @mahienthi	nvarchar(20),
@@ -51,6 +55,7 @@ as
 begin
 	insert into nhanvien values(@ma,@mahienthi,@hoten,@quequan,@diachi,@gioitinh,@ngaysinh,@luong,@chucvu,@id,@pass)
 end
+<<<<<<< HEAD
 	-----------------------
 	
 GO
@@ -60,6 +65,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 --------------Update
+=======
+----
+>>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
 create proc UpdateNhanvien
 @ma	varchar(10),
 @mahienthi	nvarchar(20),
@@ -76,6 +84,7 @@ as
 begin
 	Update nhanvien set mahienthi = @mahienthi,hoten = @hoten, quequan = @quequan,diachi= @diachi,gioitinh = @gioitinh,ngaysinh = @ngaysinh,luong = @luong,chucvu = @chucvu,@id=id,@pass=pass where ma = @ma
 end
+<<<<<<< HEAD
 	
 
 GO
@@ -84,6 +93,9 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+=======
+----
+>>>>>>> f1e85b1b0b1834a071756614e13c2def702f3266
 create proc XoaNhanvien
 @ma	varchar(10)
 as
