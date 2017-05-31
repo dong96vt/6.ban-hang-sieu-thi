@@ -163,6 +163,16 @@ namespace BanHangSieuThi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ieframe_dll_52_131 {
+            get {
+                object obj = ResourceManager.GetObject("ieframe_dll_52_131", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imageres_dll_007_10 {
             get {
                 object obj = ResourceManager.GetObject("imageres_dll_007_10", resourceCulture);

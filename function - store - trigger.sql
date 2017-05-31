@@ -22,7 +22,8 @@ begin
 	return 0 
 end
 -- Trigger xóa hóa đơn, sản phẩm không hợp lệ đồng thời update lại số lượng sản phẩm khi insert sản phẩm
-create trigger thanhtoan on sanpham for insert as
+drop trigger thanhtoan
+create trigger thanhtoan on sanpham after insert as
 begin
 	declare @mahh varchar(10)
 	declare @soluong int
@@ -31,8 +32,7 @@ begin
 	UPDATE hanghoa
 	Set soluongcon=soluongcon-@soluong
 	where ma=@mahh
-	delete hoadon where khachhangma = null
-	delete hoadon where ma in (Select a.ma from hoadon a left join sanpham b on a.ma=b.hoadonma group by a.ma  having COUNT(b.ma) = 0)
+	delete hoadon where khachhangma = null OR ma in (Select a.ma from hoadon a left join sanpham b on a.ma=b.hoadonma group by a.ma  having COUNT(b.ma) = 0)
 	delete sanpham where hanghoama = null
 end
 -------------------------------------------proc them sua xoa nhan vien---------------

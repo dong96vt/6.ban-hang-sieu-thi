@@ -46,6 +46,23 @@ namespace BanHangSieuThi.Class
             dgv.Refresh();
             return 1;
         }
+        public IEnumerable<hanghoa_o> list_obj()
+        {
+            List<hanghoa_o> list = new List<hanghoa_o>();
+            DataTable dt = Connection.getDataTable("Select * from hanghoa");
+            foreach(DataRow dr in dt.Rows)
+            {
+                hanghoa_o hh = new hanghoa_o();
+                hh.ma = dr["ma"].ToString();
+                hh.mahienthi = dr["mahienthi"].ToString();
+                hh.ten = dr["ten"].ToString();
+                hh.soluongcon = dr["soluongcon"].ToString();
+                hh.gia = dr["gia"].ToString();
+                hh.loaihang = dr["loaihang"].ToString();
+                list.Add(hh);
+            }
+            return list;
+        }
         public hanghoa_o oject4Row(DataRow dr)
         {
             if (dr == null) return null;
@@ -78,6 +95,26 @@ namespace BanHangSieuThi.Class
             cm.ExecuteNonQuery();
             conn.Close();
             return kq.Value.ToString();
+        }
+        public int Load_DropDowList(ComboBox cbb)
+        {
+            SqlConnection conn = Connection.Conn();
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                return -1;
+            }
+            SqlDataAdapter da = new SqlDataAdapter("Select * from loaihanghoa", conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            cbb.DataSource = dt;
+            cbb.DisplayMember = "ten";
+            cbb.ValueMember = "ma";
+            return 1;
         }
     }
 }
