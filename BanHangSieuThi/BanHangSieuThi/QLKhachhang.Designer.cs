@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_quanlyKH));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_khoatk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -153,9 +154,8 @@
             this.lb_makh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_makh.Location = new System.Drawing.Point(178, 55);
             this.lb_makh.Name = "lb_makh";
-            this.lb_makh.Size = new System.Drawing.Size(31, 15);
+            this.lb_makh.Size = new System.Drawing.Size(0, 15);
             this.lb_makh.TabIndex = 8;
-            this.lb_makh.Text = "null";
             // 
             // txt_hoten
             // 
@@ -372,6 +372,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_quanlyKH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách hàng";

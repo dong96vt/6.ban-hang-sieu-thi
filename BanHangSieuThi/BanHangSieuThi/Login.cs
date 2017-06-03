@@ -46,12 +46,17 @@ namespace BanHangSieuThi
                 default:
                     {
                         Menu f = new Menu(manv);
-                        f.ShowDialog();
+                        this.Visible = false;
+                        f.ShowDialog();       
                         txt_user.Text = null;
                         txt_pass.Text = null;
                         break;
                     }
             }    
+        }
+        private void frm_login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
 

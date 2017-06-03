@@ -177,6 +177,20 @@ namespace BanHangSieuThi
             }
             if (kt == 1)
             {
+                // update kho
+                foreach (ListViewItem item in ls_chon.Items)
+                {
+                    sanpham_o sp = new sanpham_o();
+                    hanghoa_b bus = new hanghoa_b();
+                    sp.soluong = Convert.ToInt32(item.SubItems[2].Text);
+                    sp.hanghoama = item.SubItems[0].Text;
+                    int ck = bus.update_kho(sp.soluong, sp.hanghoama);
+                    if (ck == 0)
+                    {
+                        MessageBox.Show("Lỗi update " + sp.hanghoama + "!");
+                        return;
+                    }
+                }
                 ls_chon.Items.Clear(); // Xóa sảm phẩm đã mua trong list View
                 tien = null;
                 txttien.Text = null;

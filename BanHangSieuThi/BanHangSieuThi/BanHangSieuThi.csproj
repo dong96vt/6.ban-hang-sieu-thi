@@ -130,6 +130,9 @@
     <EmbeddedResource Include="Huongdan.resx">
       <DependentUpon>Huongdan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kho.resx">
+      <DependentUpon>Kho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +248,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ieframe_dll_52_131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-plus-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

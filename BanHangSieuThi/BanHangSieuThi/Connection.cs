@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace BanHangSieuThi
 {
@@ -15,9 +17,11 @@ namespace BanHangSieuThi
         public static SqlDataAdapter da;
         public static SqlConnection Conn()
         {
-           string connString = @"Data Source=SUPER\SQLEXPRESS ;Initial Catalog=TTN_banhangsieuthi ;Persist Security Info=True; User ID=detai6 ;Password=detai6 ";
-           SqlConnection conn = new SqlConnection(connString);
-           return conn;
+            Ini ini = new Ini("C:\\Program Files (x86)\\Ban_hang_sieu_thi\\My Product Name\\Conn.ini");
+            //ini.WriteValue("a", "b", @"Data Source=SUPER\SQLEXPRESS;Initial Catalog=TTN_banhangsieuthi;Integrated Security=True");
+            string connString = ini.ReadValue("ConnString", "conn");
+            SqlConnection conn = new SqlConnection(connString);
+            return conn;
         }
         public static DataTable getDataTable(string sql)
         {
@@ -43,6 +47,29 @@ namespace BanHangSieuThi
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-       
+
+        public class Ini
+        {
+            private string path; 
+            [DllImport("kernel32")] 
+            private static extern int GetPrivateProfileString(string section,string key,string def,StringBuilder retVal,int size,string filePath); 
+            [DllImport("kernel32")] 
+            private static extern long WritePrivateProfileString(string section,string key,string val,string filePath);
+            private Ini(){} 
+            public Ini(string path_ini) { path=path_ini; } 
+            public string ReadValue(string Section,string Key) 
+            { 
+                StringBuilder temp = new StringBuilder(255);
+                int i = GetPrivateProfileString(Section,Key,"",temp,255,this.path);
+                return temp.ToString(); 
+            } 
+            public void WriteValue(string Section,string Key,string Value) 
+            { 
+                WritePrivateProfileString(Section,Key,Value,this.path); 
+            }
+        }
+
+
+
     }
 }

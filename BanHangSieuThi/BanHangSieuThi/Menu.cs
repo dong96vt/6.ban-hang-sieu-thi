@@ -74,6 +74,8 @@ namespace BanHangSieuThi
          {
              lb_manv.Text = null;
              this.Close();
+             frm_login f = new frm_login();
+             f.Visible = true;
          }  
 
     }

@@ -96,6 +96,18 @@ namespace BanHangSieuThi.Class
             conn.Close();
             return kq.Value.ToString();
         }
+        public int update_kho(int soluong,string ma)
+        {
+            try
+            {
+                Connection.Excute("Update hanghoa set soluongcon=soluongcon-" + soluong + " where ma = '" + ma + "'");
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
         public int Load_DropDowList(ComboBox cbb)
         {
             SqlConnection conn = Connection.Conn();

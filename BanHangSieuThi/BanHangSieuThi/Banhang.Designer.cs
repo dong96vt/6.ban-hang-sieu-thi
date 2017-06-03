@@ -199,6 +199,7 @@
             this.dgvhanghoa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvhanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvhanghoa.Location = new System.Drawing.Point(12, 80);
+            this.dgvhanghoa.MultiSelect = false;
             this.dgvhanghoa.Name = "dgvhanghoa";
             this.dgvhanghoa.ReadOnly = true;
             this.dgvhanghoa.Size = new System.Drawing.Size(312, 328);
@@ -207,9 +208,9 @@
             // txtsoluong
             // 
             this.txtsoluong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtsoluong.Location = new System.Drawing.Point(123, 441);
+            this.txtsoluong.Location = new System.Drawing.Point(138, 441);
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(100, 22);
+            this.txtsoluong.Size = new System.Drawing.Size(107, 22);
             this.txtsoluong.TabIndex = 17;
             // 
             // label7
@@ -401,11 +402,11 @@
             // 
             // butmua
             // 
-            this.butmua.BackgroundImage = global::BanHangSieuThi.Properties.Resources.Green_Buy;
+            this.butmua.BackgroundImage = global::BanHangSieuThi.Properties.Resources.text_plus_icon;
             this.butmua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.butmua.Location = new System.Drawing.Point(263, 426);
+            this.butmua.Location = new System.Drawing.Point(263, 433);
             this.butmua.Name = "butmua";
-            this.butmua.Size = new System.Drawing.Size(61, 53);
+            this.butmua.Size = new System.Drawing.Size(61, 38);
             this.butmua.TabIndex = 16;
             this.butmua.UseVisualStyleBackColor = true;
             this.butmua.Click += new System.EventHandler(this.butmua_Click);

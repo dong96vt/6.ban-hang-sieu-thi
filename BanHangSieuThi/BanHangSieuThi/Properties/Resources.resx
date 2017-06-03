@@ -127,6 +127,9 @@
   <data name="Money-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Money-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="chinaz0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chinaz0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ieframe_dll_52_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ieframe_dll_52_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,8 +142,8 @@
   <data name="chart-search-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart-search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="18_10_1299801213_51_coopmart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\18_10_1299801213_51_coopmart1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ok-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ok-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Alarm-Tick-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alarm-Tick-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,9 +175,6 @@
   <data name="imageres_dll_007_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_dll_007_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Green-Buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Green-Buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Box_crate_upload_save_delivery_package-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Box_crate_upload_save_delivery_package-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,13 +184,16 @@
   <data name="vietnam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vietnam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chinaz0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chinaz0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ok-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ok-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ieframe_dll_52_131" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ieframe_dll_52_131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="18_10_1299801213_51_coopmart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\18_10_1299801213_51_coopmart1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Green-Buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green-Buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text-plus-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\text-plus-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

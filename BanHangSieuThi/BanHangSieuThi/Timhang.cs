@@ -31,7 +31,7 @@ namespace BanHangSieuThi
         private void Timhang_Load()
         {
             IEnumerable<hanghoa_o> list = new hanghoa_b().list_obj();
-            if (cbb_loai.SelectedValue != null) list = list.Where(h => h.loaihang == cbb_loai.SelectedValue.ToString());
+            if (cbb_loai.SelectedValue != null && cbb_loai.SelectedValue.ToString() != "0") list = list.Where(h => h.loaihang == cbb_loai.SelectedValue.ToString());
             if (!string.IsNullOrWhiteSpace(txt_ten.Text)) list = list.Where(h => h.ten.ToUpper().Contains(txt_ten.Text.ToUpper()));
             if (!(string.IsNullOrWhiteSpace(txt_min.Text) && string.IsNullOrWhiteSpace(txt_max.Text)))
             {
@@ -82,6 +82,11 @@ namespace BanHangSieuThi
             
             lv_hanghoa.Items.Clear();
             Timhang_Load();
+        }
+
+        private void cbb_loai_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btn_tim_Click(sender, e);
         }
     }
 }

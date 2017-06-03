@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Timhang));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,7 +78,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(40, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 16);
+            this.label3.Size = new System.Drawing.Size(117, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Loại hàng hóa :";
             // 
@@ -86,17 +87,19 @@
             this.cbb_loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_loai.FormattingEnabled = true;
             this.cbb_loai.Location = new System.Drawing.Point(160, 101);
+            this.cbb_loai.MaxDropDownItems = 10;
             this.cbb_loai.Name = "cbb_loai";
             this.cbb_loai.Size = new System.Drawing.Size(145, 21);
             this.cbb_loai.TabIndex = 3;
+            this.cbb_loai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbb_loai_KeyDown);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(335, 104);
+            this.label4.Location = new System.Drawing.Point(329, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 16);
+            this.label4.Size = new System.Drawing.Size(117, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Mức giá (VNĐ) :";
             // 
@@ -106,7 +109,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(111, 147);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
+            this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Tên :";
             // 
@@ -116,6 +119,7 @@
             this.txt_ten.Name = "txt_ten";
             this.txt_ten.Size = new System.Drawing.Size(145, 20);
             this.txt_ten.TabIndex = 6;
+            this.txt_ten.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbb_loai_KeyDown);
             // 
             // label6
             // 
@@ -200,23 +204,25 @@
             // 
             // txt_min
             // 
-            this.txt_min.Location = new System.Drawing.Point(456, 102);
+            this.txt_min.Location = new System.Drawing.Point(450, 102);
             this.txt_min.Name = "txt_min";
             this.txt_min.Size = new System.Drawing.Size(111, 20);
             this.txt_min.TabIndex = 14;
+            this.txt_min.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbb_loai_KeyDown);
             // 
             // txt_max
             // 
-            this.txt_max.Location = new System.Drawing.Point(592, 102);
+            this.txt_max.Location = new System.Drawing.Point(586, 102);
             this.txt_max.Name = "txt_max";
             this.txt_max.Size = new System.Drawing.Size(111, 20);
             this.txt_max.TabIndex = 15;
+            this.txt_max.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbb_loai_KeyDown);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(573, 104);
+            this.label8.Location = new System.Drawing.Point(567, 104);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 16);
             this.label8.TabIndex = 16;
@@ -227,7 +233,7 @@
             this.btn_tim.BackgroundImage = global::BanHangSieuThi.Properties.Resources.ieframe_dll_52_131;
             this.btn_tim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_tim.ImageKey = "(none)";
-            this.btn_tim.Location = new System.Drawing.Point(720, 120);
+            this.btn_tim.Location = new System.Drawing.Point(722, 114);
             this.btn_tim.Name = "btn_tim";
             this.btn_tim.Size = new System.Drawing.Size(45, 42);
             this.btn_tim.TabIndex = 8;
@@ -254,10 +260,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Timhang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm hàng hóa";
-            //this.Load += new System.EventHandler(this.Timhang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
