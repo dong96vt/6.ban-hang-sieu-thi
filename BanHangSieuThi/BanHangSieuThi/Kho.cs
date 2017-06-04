@@ -50,7 +50,7 @@ namespace BanHangSieuThi
             try
             {
                 int.TryParse(txt_soluong.Text, out a);
-                string s = "update hanghoa set soluongcon =" + a + " where ma='" + dgv_hanghoa.CurrentRow.Cells[0].Value.ToString() + "'";
+                string s = "update hanghoa set soluongcon = soluongcon +" + a + " where ma='" + dgv_hanghoa.CurrentRow.Cells[0].Value.ToString() + "'";
                 Connection.getDataTable(s);
                 MessageBox.Show("Cập nhật số lượng thành công!");
                 showData();

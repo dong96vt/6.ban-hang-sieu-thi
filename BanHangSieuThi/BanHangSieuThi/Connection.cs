@@ -17,9 +17,8 @@ namespace BanHangSieuThi
         public static SqlDataAdapter da;
         public static SqlConnection Conn()
         {
-            Ini ini = new Ini("C:\\Program Files (x86)\\Ban_hang_sieu_thi\\My Product Name\\Conn.ini");
-            //ini.WriteValue("a", "b", @"Data Source=SUPER\SQLEXPRESS;Initial Catalog=TTN_banhangsieuthi;Integrated Security=True");
-            string connString = ini.ReadValue("ConnString", "conn");
+
+            string connString = "server=HP6460B-PC\\SQLEXPRESS;database=QLBHST;integrated security=SSPI";
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }
