@@ -53,7 +53,7 @@
             // 
             // txt_khoatk
             // 
-            this.txt_khoatk.Location = new System.Drawing.Point(153, 71);
+            this.txt_khoatk.Location = new System.Drawing.Point(166, 71);
             this.txt_khoatk.Name = "txt_khoatk";
             this.txt_khoatk.Size = new System.Drawing.Size(177, 20);
             this.txt_khoatk.TabIndex = 1;
@@ -61,15 +61,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 74);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(119, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tìm kiếm theo tên :";
             // 
             // btn_tim
             // 
-            this.btn_tim.Location = new System.Drawing.Point(349, 69);
+            this.btn_tim.Location = new System.Drawing.Point(362, 70);
             this.btn_tim.Name = "btn_tim";
             this.btn_tim.Size = new System.Drawing.Size(75, 23);
             this.btn_tim.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(49, 160);
+            this.label3.Location = new System.Drawing.Point(19, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 20);
             this.label3.TabIndex = 4;
@@ -88,10 +89,11 @@
             // 
             // dgv_hanghoa
             // 
+            this.dgv_hanghoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_hanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_hanghoa.Location = new System.Drawing.Point(53, 183);
+            this.dgv_hanghoa.Location = new System.Drawing.Point(21, 193);
             this.dgv_hanghoa.Name = "dgv_hanghoa";
-            this.dgv_hanghoa.Size = new System.Drawing.Size(551, 206);
+            this.dgv_hanghoa.Size = new System.Drawing.Size(616, 206);
             this.dgv_hanghoa.TabIndex = 5;
             // 
             // btn_thoat
@@ -105,7 +107,7 @@
             // 
             // btn_nhaphang
             // 
-            this.btn_nhaphang.Location = new System.Drawing.Point(349, 120);
+            this.btn_nhaphang.Location = new System.Drawing.Point(362, 121);
             this.btn_nhaphang.Name = "btn_nhaphang";
             this.btn_nhaphang.Size = new System.Drawing.Size(75, 23);
             this.btn_nhaphang.TabIndex = 7;
@@ -114,7 +116,7 @@
             // 
             // txt_soluong
             // 
-            this.txt_soluong.Location = new System.Drawing.Point(229, 122);
+            this.txt_soluong.Location = new System.Drawing.Point(242, 122);
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Size = new System.Drawing.Size(101, 20);
             this.txt_soluong.TabIndex = 8;
@@ -122,9 +124,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 125);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 13);
+            this.label4.Size = new System.Drawing.Size(213, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Số lượng sản phẩm nhập vào kho :";
             // 
@@ -132,6 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(663, 446);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_soluong);
