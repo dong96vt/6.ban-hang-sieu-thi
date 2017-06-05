@@ -107,25 +107,7 @@ C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debu
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Kho.resources
-<<<<<<< HEAD
 C:\Users\Nope\Desktop\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
-=======
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.pdb
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csprojResolveAssemblyReference.cache
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Banhang.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_InHD.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Huongdan.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Kho.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_login.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Menu.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Properties.Resources.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.frm_quanlyKH.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.QLNhanvien.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Themhang.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.Timhang.resources
-F:\GitHub\6.ban-hang-sieu-thi\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.csproj.GenerateResource.Cache
->>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
+C:\Users\Nope\Desktop\BanHangSieuThi\BanHangSieuThi\bin\Debug\BanHangSieuThi.exe.config
+C:\Users\Nope\Desktop\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.exe
+C:\Users\Nope\Desktop\BanHangSieuThi\BanHangSieuThi\obj\Debug\BanHangSieuThi.pdb
