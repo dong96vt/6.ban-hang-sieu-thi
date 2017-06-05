@@ -116,6 +116,7 @@
             this.button5.Text = "Nhân viên";
             this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.UseVisualStyleBackColor = true;
+            //this.button5.Click += new System.EventHandler(this.button5_Click);
             this.button5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button5_MouseClick);
             // 
             // button4
@@ -193,6 +194,7 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương Trình Bán Hàng SiêuThị";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

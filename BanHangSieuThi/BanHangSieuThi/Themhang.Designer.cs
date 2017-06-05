@@ -40,7 +40,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtLoaiHang = new System.Windows.Forms.TextBox();
             this.txtMaHT = new System.Windows.Forms.TextBox();
             this.txtTenHH = new System.Windows.Forms.TextBox();
             this.txtSL = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbb_loaihang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtHanghoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,9 +78,13 @@
             // 
             // dtHanghoa
             // 
+            this.dtHanghoa.AllowUserToAddRows = false;
+            this.dtHanghoa.BackgroundColor = System.Drawing.Color.White;
             this.dtHanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtHanghoa.Location = new System.Drawing.Point(47, 282);
+            this.dtHanghoa.MultiSelect = false;
             this.dtHanghoa.Name = "dtHanghoa";
+            this.dtHanghoa.ReadOnly = true;
             this.dtHanghoa.Size = new System.Drawing.Size(653, 150);
             this.dtHanghoa.TabIndex = 43;
             this.dtHanghoa.SelectionChanged += new System.EventHandler(this.dtHanghoa_SelectionChanged);
@@ -89,7 +93,7 @@
             // 
             this.txtTimkiem.Location = new System.Drawing.Point(172, 59);
             this.txtTimkiem.Name = "txtTimkiem";
-            this.txtTimkiem.Size = new System.Drawing.Size(229, 20);
+            this.txtTimkiem.Size = new System.Drawing.Size(217, 20);
             this.txtTimkiem.TabIndex = 42;
             // 
             // button5
@@ -101,6 +105,7 @@
             this.button5.TabIndex = 41;
             this.button5.Text = "Tìm Kiếm ";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // bntXoa
             // 
@@ -160,19 +165,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(425, 144);
+            this.label6.Location = new System.Drawing.Point(425, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 16);
             this.label6.TabIndex = 35;
             this.label6.Text = "Loại Hàng";
-            // 
-            // txtLoaiHang
-            // 
-            this.txtLoaiHang.Location = new System.Drawing.Point(551, 144);
-            this.txtLoaiHang.Name = "txtLoaiHang";
-            this.txtLoaiHang.Size = new System.Drawing.Size(149, 20);
-            this.txtLoaiHang.TabIndex = 34;
-            this.txtLoaiHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoaiHang_KeyDown);
             // 
             // txtMaHT
             // 
@@ -192,15 +189,16 @@
             // 
             // txtSL
             // 
-            this.txtSL.Location = new System.Drawing.Point(551, 101);
+            this.txtSL.Location = new System.Drawing.Point(551, 146);
             this.txtSL.Name = "txtSL";
+            this.txtSL.ReadOnly = true;
             this.txtSL.Size = new System.Drawing.Size(149, 20);
             this.txtSL.TabIndex = 31;
             this.txtSL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSL_KeyDown);
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(551, 184);
+            this.txtGia.Location = new System.Drawing.Point(550, 102);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(149, 20);
             this.txtGia.TabIndex = 30;
@@ -217,7 +215,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(426, 187);
+            this.label5.Location = new System.Drawing.Point(425, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 16);
             this.label5.TabIndex = 28;
@@ -228,7 +226,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(425, 101);
+            this.label4.Location = new System.Drawing.Point(425, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 16);
             this.label4.TabIndex = 27;
@@ -267,12 +265,22 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Mã Hàng Hóa";
             // 
+            // cbb_loaihang
+            // 
+            this.cbb_loaihang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_loaihang.FormattingEnabled = true;
+            this.cbb_loaihang.Location = new System.Drawing.Point(550, 185);
+            this.cbb_loaihang.Name = "cbb_loaihang";
+            this.cbb_loaihang.Size = new System.Drawing.Size(149, 21);
+            this.cbb_loaihang.TabIndex = 46;
+            // 
             // Themhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(749, 450);
+            this.Controls.Add(this.cbb_loaihang);
             this.Controls.Add(this.bntclear);
             this.Controls.Add(this.bntThoat);
             this.Controls.Add(this.dtHanghoa);
@@ -284,7 +292,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtLoaiHang);
             this.Controls.Add(this.txtMaHT);
             this.Controls.Add(this.txtTenHH);
             this.Controls.Add(this.txtSL);
@@ -319,7 +326,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtLoaiHang;
         private System.Windows.Forms.TextBox txtMaHT;
         private System.Windows.Forms.TextBox txtTenHH;
         private System.Windows.Forms.TextBox txtSL;
@@ -330,5 +336,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbb_loaihang;
     }
 }

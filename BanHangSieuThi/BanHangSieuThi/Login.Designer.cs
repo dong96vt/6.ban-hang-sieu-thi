@@ -78,9 +78,9 @@
             this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txt_pass.Location = new System.Drawing.Point(174, 69);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(180, 29);
             this.txt_pass.TabIndex = 1;
+            this.txt_pass.UseSystemPasswordChar = true;
             // 
             // but_dangnhap
             // 

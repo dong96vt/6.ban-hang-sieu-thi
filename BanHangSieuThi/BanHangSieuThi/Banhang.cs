@@ -16,6 +16,7 @@ namespace BanHangSieuThi
     public partial class Banhang : Form
     {
         private string tien; // Biến lưu tổng tiền của hóa đơn
+        private hanghoa_o hh_chon;
         public Banhang(string manv)
         {
             InitializeComponent();
@@ -222,14 +223,16 @@ namespace BanHangSieuThi
         // Click button butmua
         private void butmua_Click(object sender, EventArgs e)
         {
-            if(dgvhanghoa.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("Chưa chọn sản phẩm");
-                return;
-            }
-            DataRowView drview = (DataRowView) dgvhanghoa.SelectedRows[0].DataBoundItem;
+            int i = dgvhanghoa.CurrentRow.Index;
+            DataRowView dr = (DataRowView)dgvhanghoa.Rows[i].DataBoundItem;
+            //if (i==null)
+            //{
+            //    MessageBox.Show("Chưa chọn sản phẩm");
+            //    return;
+            //}
+            //DataRowView drview = (DataRowView) dgvhanghoa.SelectedRows[0].DataBoundItem;
             hanghoa_b b = new hanghoa_b();
-            hanghoa_o hh = b.oject4Row(drview.Row);
+            hanghoa_o hh = b.oject4Row(dr.Row);
             showList(hh);
             txtsoluong.Text = "0";
         }
@@ -240,6 +243,11 @@ namespace BanHangSieuThi
             try
             {
                 int sl = Convert.ToInt32(txtsoluong.Text);
+                if (sl >= 1000 || sl <= -1000) 
+                {
+                    MessageBox.Show("Số lượng phải trong khoảng (-1000 - 1000), mời nhập lại !");
+                    return;
+                }
                 if (sl == 0)
                 {
                     MessageBox.Show("Số lượng mua phải khác 0, mời nhập lại !");
@@ -385,5 +393,7 @@ namespace BanHangSieuThi
         {
             Banhang_Load(sender, e);
         }
+
+
     }
 }

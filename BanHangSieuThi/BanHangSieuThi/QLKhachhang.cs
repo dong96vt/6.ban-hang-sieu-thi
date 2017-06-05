@@ -148,6 +148,7 @@ namespace BanHangSieuThi
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            //if (MessageBox.Show("Bạn có muốn xóa bản ghi này không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.No) return;
             if (lb_ma_ht.Text==null)
             {
                 MessageBox.Show("Chưa chọn khách hàng !");

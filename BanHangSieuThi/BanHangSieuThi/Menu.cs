@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanHangSieuThi.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,13 @@ namespace BanHangSieuThi
 {
     public partial class Menu : Form
     {
+        private bool check = true;
         public Menu(string manv)
         {
             InitializeComponent();
             lb_manv.Text = manv;
+            string chucvu = new nhanvien_b().check_chucvu(manv);
+            if (chucvu != "admin") button5.Enabled = false;
         }
 
         private void button5_MouseClick(object sender, MouseEventArgs e)
@@ -73,10 +77,20 @@ namespace BanHangSieuThi
          private void btn_Logout_Click(object sender, EventArgs e)
          {
              lb_manv.Text = null;
+             check = false;
              this.Close();
              frm_login f = new frm_login();
              f.Visible = true;
-         }  
+         }
+
+         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+         {
+             if (check == false) check = true;
+             else
+             {
+                 Application.Exit();
+             }
+         } 
 
     }
 }

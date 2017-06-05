@@ -14,9 +14,9 @@ set @i=@i+1
      VALUES
            ('HH'+CAST(@i as varchar)
            ,@i
-           ,'Hàng hóa '+CAST(@i as varchar)
+           ,N'Hàng hóa '+CAST(@i as varchar)
            ,@i*10
-           ,null
+           ,@i%4+1
            ,@i*10000)
 end
 -- Khách hàng
@@ -36,10 +36,10 @@ set @i=@i+1
      VALUES
             ('KH'+CAST(@i as varchar)
            ,'KH'+CAST(@i as varchar)
-           ,'Khách hàng '+CAST(@i as varchar)
-           ,CAST(@i as varchar)+ ' abc-xyz-Hà Nội'
+           ,N'Khách hàng '+CAST(@i as varchar)
+           ,CAST(@i as varchar)+ N' abc-xyz-Hà Nội'
            ,@i%2
-           ,null
+           ,'1-1-0'
            ,CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)
            ,'09'+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar)+CAST(@i as varchar))
 end
@@ -63,13 +63,19 @@ set @i=@i+1
      VALUES
            ('NV'+CAST(@i as varchar)
            ,'NV'+CAST(@i as varchar)
-           ,'Nhân viên '+CAST(@i as varchar)
+           ,N'Nhân viên '+CAST(@i as varchar)
            ,'Quê '+CAST(@i as varchar)
            ,'Địa chỉ'+CAST(@i as varchar)
            ,@i%2
-           ,null
+           ,'1-1-1'
            ,@i*1000000
-           ,'Nhân viên'
+           ,N'Nhân viên'
            ,'NV'+CAST(@i as varchar)
            ,'NV'+CAST(@i as varchar))
 end
+
+INSERT INTO [dbo].[loaihanghoa]([ma],[ten])VALUES('0',N'Tất cả')
+INSERT INTO [dbo].[loaihanghoa]([ma],[ten])VALUES('1',N'Đồ gia dụng')
+INSERT INTO [dbo].[loaihanghoa]([ma],[ten])VALUES('2',N'Thực phẩm')
+INSERT INTO [dbo].[loaihanghoa]([ma],[ten])VALUES('3',N'Đồ điện - điện tử')
+INSERT INTO [dbo].[loaihanghoa]([ma],[ten])VALUES('4',N'Khác')

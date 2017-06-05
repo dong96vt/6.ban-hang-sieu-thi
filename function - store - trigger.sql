@@ -12,7 +12,15 @@ begin
 		end
 	return @ma
 end
-<<<<<<< HEAD
+
+create function check_chucvu(@ma varchar(10)) returns nvarchar(20) as
+begin
+	declare @chucvu nvarchar(20)
+	
+	if exists (select * from nhanvien where ma=@ma)
+		select @chucvu= a.chucvu from (select * from nhanvien where ma=@ma) a
+	return @chucvu
+end
  -- Kiểm tra số lượng sản phẩm còn lại
 create function check_kho(@ma varchar(10), @soluong int) returns int as
 begin

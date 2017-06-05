@@ -38,6 +38,7 @@
             this.btn_nhaphang = new System.Windows.Forms.Button();
             this.txt_soluong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_themhang = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hanghoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,11 @@
             // 
             // txt_khoatk
             // 
+<<<<<<< HEAD
+            this.txt_khoatk.Location = new System.Drawing.Point(217, 71);
+=======
             this.txt_khoatk.Location = new System.Drawing.Point(166, 71);
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.txt_khoatk.Name = "txt_khoatk";
             this.txt_khoatk.Size = new System.Drawing.Size(177, 20);
             this.txt_khoatk.TabIndex = 1;
@@ -62,7 +67,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
+            this.label2.Location = new System.Drawing.Point(69, 74);
+=======
             this.label2.Location = new System.Drawing.Point(18, 74);
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 16);
             this.label2.TabIndex = 2;
@@ -70,12 +79,17 @@
             // 
             // btn_tim
             // 
+<<<<<<< HEAD
+            this.btn_tim.Location = new System.Drawing.Point(413, 70);
+=======
             this.btn_tim.Location = new System.Drawing.Point(362, 70);
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.btn_tim.Name = "btn_tim";
             this.btn_tim.Size = new System.Drawing.Size(75, 23);
             this.btn_tim.TabIndex = 3;
             this.btn_tim.Text = "Tìm";
             this.btn_tim.UseVisualStyleBackColor = true;
+            this.btn_tim.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
             // label3
             // 
@@ -89,10 +103,22 @@
             // 
             // dgv_hanghoa
             // 
+<<<<<<< HEAD
+            this.dgv_hanghoa.AllowUserToAddRows = false;
+            this.dgv_hanghoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_hanghoa.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_hanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_hanghoa.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dgv_hanghoa.Location = new System.Drawing.Point(21, 193);
+            this.dgv_hanghoa.MultiSelect = false;
+            this.dgv_hanghoa.Name = "dgv_hanghoa";
+            this.dgv_hanghoa.ReadOnly = true;
+=======
             this.dgv_hanghoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_hanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_hanghoa.Location = new System.Drawing.Point(21, 193);
             this.dgv_hanghoa.Name = "dgv_hanghoa";
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.dgv_hanghoa.Size = new System.Drawing.Size(616, 206);
             this.dgv_hanghoa.TabIndex = 5;
             // 
@@ -104,19 +130,29 @@
             this.btn_thoat.TabIndex = 6;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // btn_nhaphang
             // 
+<<<<<<< HEAD
+            this.btn_nhaphang.Location = new System.Drawing.Point(413, 121);
+=======
             this.btn_nhaphang.Location = new System.Drawing.Point(362, 121);
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.btn_nhaphang.Name = "btn_nhaphang";
             this.btn_nhaphang.Size = new System.Drawing.Size(75, 23);
             this.btn_nhaphang.TabIndex = 7;
             this.btn_nhaphang.Text = "Nhập hàng";
             this.btn_nhaphang.UseVisualStyleBackColor = true;
+            this.btn_nhaphang.Click += new System.EventHandler(this.btn_nhaphang_Click);
             // 
             // txt_soluong
             // 
+<<<<<<< HEAD
+            this.txt_soluong.Location = new System.Drawing.Point(293, 122);
+=======
             this.txt_soluong.Location = new System.Drawing.Point(242, 122);
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Size = new System.Drawing.Size(101, 20);
             this.txt_soluong.TabIndex = 8;
@@ -125,11 +161,25 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
+            this.label4.Location = new System.Drawing.Point(70, 124);
+=======
             this.label4.Location = new System.Drawing.Point(19, 124);
+>>>>>>> 13c06913ac354fbd297c37a802bc28b5f73b6ff1
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(213, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Số lượng sản phẩm nhập vào kho :";
+            // 
+            // btn_themhang
+            // 
+            this.btn_themhang.Location = new System.Drawing.Point(529, 121);
+            this.btn_themhang.Name = "btn_themhang";
+            this.btn_themhang.Size = new System.Drawing.Size(75, 23);
+            this.btn_themhang.TabIndex = 10;
+            this.btn_themhang.Text = "Thêm hàng";
+            this.btn_themhang.UseVisualStyleBackColor = true;
+            this.btn_themhang.Click += new System.EventHandler(this.btn_themhang_Click);
             // 
             // Kho
             // 
@@ -137,6 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(663, 446);
+            this.Controls.Add(this.btn_themhang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_soluong);
             this.Controls.Add(this.btn_nhaphang);
@@ -168,5 +219,6 @@
         private System.Windows.Forms.Button btn_nhaphang;
         private System.Windows.Forms.TextBox txt_soluong;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_themhang;
     }
 }

@@ -26,7 +26,7 @@ namespace BanHangSieuThi
         }
         private void load_dropdownlist()
         {
-            int kt = new hanghoa_b().Load_DropDowList(cbb_loai);
+            int kt = new hanghoa_b().Load_DropDowList(cbb_loai, @"Select * from loaihanghoa");
         }
         private void Timhang_Load()
         {

@@ -277,6 +277,7 @@
             // 
             // dgv_khachhang
             // 
+            this.dgv_khachhang.AllowUserToAddRows = false;
             this.dgv_khachhang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_khachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_khachhang.GridColor = System.Drawing.SystemColors.Control;

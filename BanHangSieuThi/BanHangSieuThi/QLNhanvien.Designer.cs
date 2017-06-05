@@ -59,6 +59,7 @@
             this.la = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dtns = new System.Windows.Forms.DateTimePicker();
+            this.btn_thoat = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg1)).BeginInit();
@@ -294,12 +295,16 @@
             // 
             // dg1
             // 
+            this.dg1.AllowUserToAddRows = false;
             this.dg1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dg1.BackgroundColor = System.Drawing.Color.White;
             this.dg1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg1.Location = new System.Drawing.Point(15, 207);
+            this.dg1.MultiSelect = false;
             this.dg1.Name = "dg1";
+            this.dg1.ReadOnly = true;
             this.dg1.Size = new System.Drawing.Size(893, 200);
             this.dg1.TabIndex = 58;
             this.dg1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellContentClick);
@@ -330,11 +335,22 @@
             this.dtns.Size = new System.Drawing.Size(200, 20);
             this.dtns.TabIndex = 64;
             // 
+            // btn_thoat
+            // 
+            this.btn_thoat.Location = new System.Drawing.Point(668, 178);
+            this.btn_thoat.Name = "btn_thoat";
+            this.btn_thoat.Size = new System.Drawing.Size(75, 23);
+            this.btn_thoat.TabIndex = 65;
+            this.btn_thoat.Text = "Thoát";
+            this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
+            // 
             // QLNhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 409);
+            this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.dtns);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.la);
@@ -364,7 +380,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QLNhanvien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhanvien";
+            this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.QLNhanvien_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -408,5 +424,6 @@
         private System.Windows.Forms.Label la;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtns;
+        private System.Windows.Forms.Button btn_thoat;
     }
 }

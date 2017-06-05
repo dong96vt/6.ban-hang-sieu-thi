@@ -39,7 +39,7 @@ namespace BanHangSieuThi
                 }
                 catch
                 {
-                    str1 = "Tò te tí te ,số máy quí khách vừa gọi không có thật, xin vui lòng gọi lại số khác :D";
+                    str1 = "Lỗi !";
                 }
             }
             return ReadNumber.Viethoa(str1);

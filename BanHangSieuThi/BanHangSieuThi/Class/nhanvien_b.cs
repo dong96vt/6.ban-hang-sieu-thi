@@ -14,6 +14,29 @@ namespace BanHangSieuThi.Class
 {
     class nhanvien_b
     {
+        public string check_chucvu(string ma)
+        {
+            SqlConnection conn = Connection.Conn();
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi kết nối SQL !");
+                return null;
+            }
+
+            SqlCommand cm = new SqlCommand("dbo.check_chucvu", conn);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.Add("@ma", SqlDbType.VarChar).Value = ma;
+            SqlParameter chucvu = new SqlParameter("@Result", SqlDbType.VarChar);
+            chucvu.Direction = ParameterDirection.ReturnValue;
+            cm.Parameters.Add(chucvu);
+            cm.ExecuteNonQuery();
+            conn.Close();
+            return chucvu.Value.ToString();
+        }
         public string login(string user, string pass)
         {
             SqlConnection conn = Connection.Conn();

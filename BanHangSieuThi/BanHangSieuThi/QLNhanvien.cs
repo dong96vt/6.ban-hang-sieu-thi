@@ -131,8 +131,8 @@ namespace BanHangSieuThi
 
         private void btxoa_Click(object sender, EventArgs e)
         {
+            //if (MessageBox.Show("Bạn có muốn xóa bản ghi này không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.No) return;
             conn.Open();
-
             SqlCommand comm = new SqlCommand("XoaNhanvien", conn);
             comm.Parameters.Add(new SqlParameter("@ma", txtma.Text));
             comm.CommandType = CommandType.StoredProcedure;
@@ -186,6 +186,11 @@ namespace BanHangSieuThi
         private void txtma_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

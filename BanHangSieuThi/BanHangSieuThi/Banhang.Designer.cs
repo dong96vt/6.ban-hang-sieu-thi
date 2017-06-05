@@ -481,6 +481,7 @@
             this.Name = "Banhang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bán hàng";
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Banhang_FormClosing);
             this.Load += new System.EventHandler(this.Banhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhanghoa)).EndInit();
             this.ResumeLayout(false);

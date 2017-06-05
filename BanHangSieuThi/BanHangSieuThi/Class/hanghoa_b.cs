@@ -108,7 +108,7 @@ namespace BanHangSieuThi.Class
                 return 0;
             }
         }
-        public int Load_DropDowList(ComboBox cbb)
+        public int Load_DropDowList(ComboBox cbb, string sql)
         {
             SqlConnection conn = Connection.Conn();
             try
@@ -119,7 +119,7 @@ namespace BanHangSieuThi.Class
             {
                 return -1;
             }
-            SqlDataAdapter da = new SqlDataAdapter("Select * from loaihanghoa", conn);
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             conn.Close();

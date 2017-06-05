@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanHangSieuThi.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,9 @@ namespace BanHangSieuThi
         public void showData()
         {
             //SqlConnection conn = Connection.Conn();
-            var vv = Connection.getDataTable("Select * from hanghoa");
+            string sql = "Select * from hanghoa";
+            if (!string.IsNullOrWhiteSpace(txtTimkiem.Text)) sql = "Select * from hanghoa where ten like '%" + txtTimkiem.Text + "%'";
+            var vv = Connection.getDataTable(sql);
             vv.Columns["ma"].ColumnName = "Mã Hàng Hóa";
             vv.Columns["mahienthi"].ColumnName = "Mã Hiển Thị";
             vv.Columns["ten"].ColumnName = "Tên Hàng Hóa";
@@ -26,19 +29,24 @@ namespace BanHangSieuThi
             dtHanghoa.DataSource = vv;
 
         }
+        private void load_dropdownlist()
+        {
+            int kt = new hanghoa_b().Load_DropDowList(cbb_loaihang, @"Select * from loaihanghoa where ma !='0'");
+        }
         public void Clear()
         {
             txtMaHH.Clear();
             txtMaHT.Clear();
             txtTenHH.Clear();
             txtSL.Clear();
-            txtLoaiHang.Clear();
+            cbb_loaihang.Text = null;
             txtGia.Clear();
             txtMaHH.Focus();
         }
         public Themhang()
         {
             InitializeComponent();
+            load_dropdownlist();
         }
 
         private void bntclear_Click(object sender, EventArgs e)
@@ -54,7 +62,7 @@ namespace BanHangSieuThi
                 string b = txtMaHT.Text;
                 string c = txtTenHH.Text;
                 string d = txtSL.Text;
-                string g = txtLoaiHang.Text;
+                string g = cbb_loaihang.SelectedValue.ToString();
                 string h = txtGia.Text;
                 string sql = @"Insert into hanghoa values( N'" + a + "' , N'" + b + "' ,N'" + c + "',N'" + d + "',N'" + g + "',N'" + h + "')";
                 Connection.Excute(sql);
@@ -83,7 +91,7 @@ namespace BanHangSieuThi
             txtMaHT.Text = dtHanghoa[1, chiso].Value.ToString();
             txtTenHH.Text = dtHanghoa[2, chiso].Value.ToString();
             txtSL.Text = dtHanghoa[3, chiso].Value.ToString();
-            txtLoaiHang.Text = dtHanghoa[4, chiso].Value.ToString();
+            cbb_loaihang.SelectedValue = dtHanghoa[4, chiso].Value.ToString();
             txtGia.Text = dtHanghoa[5, chiso].Value.ToString();
             txtMaHH.Enabled = false;
         }
@@ -103,7 +111,7 @@ namespace BanHangSieuThi
         private void txtSL_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                txtLoaiHang.Focus();
+                cbb_loaihang.Focus();
         }
 
         private void txtLoaiHang_KeyDown(object sender, KeyEventArgs e)
@@ -120,7 +128,7 @@ namespace BanHangSieuThi
                 string a = txtMaHT.Text;
                 string b = txtTenHH.Text;
                 string c = txtSL.Text;
-                string d = txtLoaiHang.Text;
+                string d = cbb_loaihang.SelectedValue.ToString();
                 string g = txtGia.Text;
                 string sql = @"UPDATE [dbo].[hanghoa] SET [mahienthi] = N'" + a + "' ,  [ten] = N'" + b + "' , [soluongcon] = N'" + c + "' ,[loaihang] = N'" + d + "',gia = N'" + g + "'  where ma = '" + txtMaHH.Text + "' ";
                 Connection.Excute(sql);
@@ -142,6 +150,7 @@ namespace BanHangSieuThi
 
         private void bntXoa_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn có muốn xóa bản ghi này không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.No) return;
             try
             {
                 //int chiso = dtHanghoa.CurrentRow.Index;
@@ -162,7 +171,13 @@ namespace BanHangSieuThi
         {
             if (MessageBox.Show("Bạn có muốn thoát không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 Close();
-        } 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Themhang_Load(sender, e);
+        }
+
 
 
 
