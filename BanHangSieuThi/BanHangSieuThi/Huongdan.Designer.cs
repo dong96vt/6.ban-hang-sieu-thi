@@ -36,7 +36,6 @@
             this.bánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiểmTraKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiếmHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wbw_huongdan = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,8 +48,7 @@
             this.kháchHàngToolStripMenuItem,
             this.bánHàngToolStripMenuItem,
             this.thêmHàngToolStripMenuItem,
-            this.kiểmTraKhoToolStripMenuItem,
-            this.tìmKiếmHàngToolStripMenuItem});
+            this.kiểmTraKhoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1062, 24);
@@ -99,13 +97,6 @@
             this.kiểmTraKhoToolStripMenuItem.Text = "Kiểm tra kho";
             this.kiểmTraKhoToolStripMenuItem.Click += new System.EventHandler(this.kiểmTraKhoToolStripMenuItem_Click);
             // 
-            // tìmKiếmHàngToolStripMenuItem
-            // 
-            this.tìmKiếmHàngToolStripMenuItem.Name = "tìmKiếmHàngToolStripMenuItem";
-            this.tìmKiếmHàngToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.tìmKiếmHàngToolStripMenuItem.Text = "Tìm kiếm hàng";
-            this.tìmKiếmHàngToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmHàngToolStripMenuItem_Click);
-            // 
             // wbw_huongdan
             // 
             this.wbw_huongdan.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -127,6 +118,7 @@
             this.Name = "Huongdan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hướng dẫn sử dụng";
+            this.Load += new System.EventHandler(this.Huongdan_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -144,6 +136,5 @@
         private System.Windows.Forms.ToolStripMenuItem bánHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kiểmTraKhoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tìmKiếmHàngToolStripMenuItem;
     }
 }
