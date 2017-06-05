@@ -18,8 +18,9 @@ namespace BanHangSieuThi
         public static SqlConnection Conn()
         {
             Ini ini = new Ini("C:\\Program Files (x86)\\Ban_hang_sieu_thi\\My Product Name\\Conn.ini");
-            //string connString = @"Data Source=SUPER\SQLEXPRESS;Initial Catalog=TTN_banhangsieuthi;Integrated Security=True";
-            string connString = ini.ReadValue("ConnString", "conn");
+            //string connString = @"data source=8470P-PC\\CNTTSQL;initial catalog=TTN_banhangsieuthi;integrated security=True;MultipleActiveResultSets=True";
+            string connString = @"data source=8470P-PC\CNTTSQL;initial catalog=TTN_banhangsieuthi;integrated security=True;MultipleActiveResultSets=True";
+            //string connString = ini.ReadValue("ConnString", "conn");
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }
